@@ -1,11 +1,11 @@
 export default function ContactSection() {
   return (
-    <section className="bg-black py-24 px-6">
+    <section className="bg-black py-32 px-6">
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
           {/* Left Column */}
           <div>
-            <h2 className="text-white font-bold text-4xl md:text-5xl tracking-tight mb-8">
+            <h2 className="text-white font-bold text-5xl md:text-6xl font-heading tracking-tight mb-8">
               Lassen Sie uns sprechen.
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed mb-12">
