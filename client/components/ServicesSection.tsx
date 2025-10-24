@@ -21,26 +21,25 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="bg-black py-24 px-6">
+    <section className="bg-dark-blue py-32 px-6">
       <div className="container mx-auto">
         {/* Section Title */}
         <div className="text-center mb-20">
-          <h2 className="text-white font-bold text-4xl md:text-5xl tracking-tight mb-6">
+          <h2 className="text-white font-bold text-5xl md:text-6xl font-heading tracking-tight mb-12">
             Leistungen
           </h2>
-          <div className="w-24 h-1 bg-white mx-auto"></div>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
           {services.map((service, index) => (
             <div
               key={index}
-              className="group bg-slate-900/50 rounded-lg p-8 hover:bg-slate-800/50 transition-all duration-300 border border-gray-800 hover:border-gray-700"
+              className="group"
             >
-              <div className="text-5xl mb-6">{service.icon}</div>
-              <h3 className="text-white font-bold text-2xl mb-4 font-heading">{service.title}</h3>
-              <p className="text-gray-400 leading-relaxed">{service.description}</p>
+              <div className="text-6xl mb-8">{service.icon}</div>
+              <h3 className="text-white font-bold text-2xl mb-6 font-heading">{service.title}</h3>
+              <p className="text-gray-300 leading-relaxed text-base">{service.description}</p>
             </div>
           ))}
         </div>
