@@ -24,11 +24,11 @@ export default function ReferencesSection() {
   ];
 
   return (
-    <section className="bg-black py-24 px-6">
+    <section className="bg-black py-32 px-6">
       <div className="container mx-auto">
         {/* Section Title */}
-        <div className="text-center mb-20">
-          <h2 className="text-white font-bold text-4xl md:text-5xl tracking-tight">
+        <div className="text-center mb-24">
+          <h2 className="text-white font-bold text-5xl md:text-6xl font-heading tracking-tight">
             Referenzen
           </h2>
         </div>
