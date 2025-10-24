@@ -18,11 +18,11 @@ export default function TeamSection() {
   ];
 
   return (
-    <section className="bg-slate-950 py-24 px-6">
+    <section className="bg-dark-blue py-32 px-6">
       <div className="container mx-auto">
         {/* Section Title */}
-        <div className="text-center mb-20">
-          <h2 className="text-white font-bold text-4xl md:text-5xl tracking-tight mb-6">
+        <div className="text-center mb-24">
+          <h2 className="text-white font-bold text-5xl md:text-6xl font-heading tracking-tight mb-6">
             Ansprechpartner
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
