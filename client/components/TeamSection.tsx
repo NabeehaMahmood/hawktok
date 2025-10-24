@@ -26,7 +26,8 @@ export default function TeamSection() {
             Ansprechpartner
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Unser erfahrenes Team bringt Expertise aus Performance Marketing, Webentwicklung und KI zusammen.
+            Unser erfahrenes Team bringt Expertise aus Performance Marketing,
+            Webentwicklung und KI zusammen.
           </p>
         </div>
 
@@ -36,11 +37,15 @@ export default function TeamSection() {
             <div key={index} className="text-center group">
               <div className="relative mb-8 inline-block">
                 <div className="w-32 h-32 md:w-40 md:h-40 rounded-3xl bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center overflow-hidden group-hover:shadow-2xl transition-all duration-300">
-                  <div className="text-5xl font-bold text-gray-600">{member.initials}</div>
+                  <div className="text-5xl font-bold text-gray-600">
+                    {member.initials}
+                  </div>
                 </div>
                 <div className="absolute inset-0 rounded-3xl bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
               </div>
-              <h3 className="text-white font-bold text-xl font-heading mb-2">{member.name}</h3>
+              <h3 className="text-white font-bold text-xl font-heading mb-2">
+                {member.name}
+              </h3>
               <p className="text-gray-400 text-sm">{member.role}</p>
             </div>
           ))}

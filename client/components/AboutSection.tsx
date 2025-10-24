@@ -3,17 +3,20 @@ export default function AboutSection() {
     {
       number: "01",
       title: "Datengetrieben",
-      description: "Jede Entscheidung basiert auf Daten, nicht auf Bauchgefühl.",
+      description:
+        "Jede Entscheidung basiert auf Daten, nicht auf Bauchgefühl.",
     },
     {
       number: "02",
       title: "Transparent",
-      description: "Vollständige Transparenz über Kosten, Prozesse und Ergebnisse.",
+      description:
+        "Vollständige Transparenz über Kosten, Prozesse und Ergebnisse.",
     },
     {
       number: "03",
       title: "Ergebnisorientiert",
-      description: "Unser Erfolg ist an Ihre messbaren Geschäftsergebnisse gebunden.",
+      description:
+        "Unser Erfolg ist an Ihre messbaren Geschäftsergebnisse gebunden.",
     },
     {
       number: "04",
@@ -37,10 +40,10 @@ export default function AboutSection() {
               Darum Lumus
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed mb-12">
-              Unsere Art zu arbeiten ist anders. Wir kombinieren kreative Excellence mit
-              analytischer Präzision. Das Ergebnis: Websites, die nicht nur schön sind,
-              sondern auch verkaufen. Kampagnen, die nicht nur sichtbar sind, sondern
-              Kunden bringen.
+              Unsere Art zu arbeiten ist anders. Wir kombinieren kreative
+              Excellence mit analytischer Präzision. Das Ergebnis: Websites, die
+              nicht nur schön sind, sondern auch verkaufen. Kampagnen, die nicht
+              nur sichtbar sind, sondern Kunden bringen.
             </p>
             <a
               href="/contact"
@@ -58,12 +61,16 @@ export default function AboutSection() {
                 className="border-b border-gray-800 pb-6 last:border-b-0"
               >
                 <div className="flex items-start gap-4">
-                  <div className="text-gray-600 font-bold text-sm min-w-fit">{benefit.number}</div>
+                  <div className="text-gray-600 font-bold text-sm min-w-fit">
+                    {benefit.number}
+                  </div>
                   <div>
                     <h3 className="text-white font-bold text-lg font-heading mb-2">
                       {benefit.title}
                     </h3>
-                    <p className="text-gray-500 text-sm">{benefit.description}</p>
+                    <p className="text-gray-500 text-sm">
+                      {benefit.description}
+                    </p>
                   </div>
                 </div>
               </div>

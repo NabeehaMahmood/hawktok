@@ -9,8 +9,9 @@ export default function ContactSection() {
               Lassen Sie uns sprechen.
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed mb-12">
-              Wir freuen uns, von Ihnen zu hören. Egal ob Sie ein bestehendes Projekt optimieren
-              möchten oder von Grund auf neu starten – lassen Sie uns gemeinsam ihre Ziele erreichen.
+              Wir freuen uns, von Ihnen zu hören. Egal ob Sie ein bestehendes
+              Projekt optimieren möchten oder von Grund auf neu starten – lassen
+              Sie uns gemeinsam ihre Ziele erreichen.
             </p>
             <a
               href="/contact"
@@ -23,7 +24,9 @@ export default function ContactSection() {
           {/* Right Column */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-white font-bold text-lg mb-4 font-heading">Kontakt</h3>
+              <h3 className="text-white font-bold text-lg mb-4 font-heading">
+                Kontakt
+              </h3>
               <div className="space-y-3">
                 <div>
                   <p className="text-gray-500 text-sm mb-1">E-Mail</p>
@@ -48,7 +51,8 @@ export default function ContactSection() {
 
             <div className="pt-8 border-t border-gray-800">
               <p className="text-gray-400 text-sm">
-                Wir sind Ihr Partner für Performance Marketing, Webdesign und digitale Transformation.
+                Wir sind Ihr Partner für Performance Marketing, Webdesign und
+                digitale Transformation.
               </p>
             </div>
           </div>

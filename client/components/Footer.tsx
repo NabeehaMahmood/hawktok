@@ -13,7 +13,10 @@ export default function Footer() {
       <div className="overflow-hidden bg-black py-8 border-b border-gray-900">
         <div className="whitespace-nowrap animate-scroll-left inline-block">
           {Array.from({ length: 3 }).map((_, i) => (
-            <span key={i} className="inline-block text-white text-2xl font-bold tracking-widest mr-16">
+            <span
+              key={i}
+              className="inline-block text-white text-2xl font-bold tracking-widest mr-16"
+            >
               LIEFERN STATT LABERN • LIEFERN STATT LABERN • LIEFERN STATT LABERN
             </span>
           ))}
@@ -25,8 +28,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Contact */}
           <div>
-            <h3 className="text-white text-lg font-semibold mb-4">Kontaktiere uns:</h3>
-            <a href="mailto:info@lumus.de" className="text-gray-400 hover:text-white transition-colors">
+            <h3 className="text-white text-lg font-semibold mb-4">
+              Kontaktiere uns:
+            </h3>
+            <a
+              href="mailto:info@lumus.de"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
               info@lumus.de
             </a>
           </div>
@@ -71,9 +79,14 @@ export default function Footer() {
 
         {/* Bottom Footer */}
         <div className="border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-600 text-sm">© LUMUS DIGITAL. Alle Rechte vorbehalten.</p>
+          <p className="text-gray-600 text-sm">
+            © LUMUS DIGITAL. Alle Rechte vorbehalten.
+          </p>
           <div className="flex gap-6 text-gray-600 text-sm mt-4 md:mt-0">
-            <a href="/datenschutz" className="hover:text-white transition-colors">
+            <a
+              href="/datenschutz"
+              className="hover:text-white transition-colors"
+            >
               Datenschutz
             </a>
             <a href="/impressum" className="hover:text-white transition-colors">

@@ -86,8 +86,8 @@ export default function HeroSection() {
         {/* Subtitle quote */}
         <div className="mt-24 max-w-2xl text-center">
           <p className="text-white text-xl md:text-2xl font-light tracking-wide">
-            Nach unzähligen Websites, Kampagnen und einer Menge Adspend wissen wir, wie Marketing
-            wirklich funktioniert.
+            Nach unzähligen Websites, Kampagnen und einer Menge Adspend wissen
+            wir, wie Marketing wirklich funktioniert.
           </p>
         </div>
 

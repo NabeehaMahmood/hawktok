@@ -33,13 +33,14 @@ export default function ServicesSection() {
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
           {services.map((service, index) => (
-            <div
-              key={index}
-              className="group"
-            >
+            <div key={index} className="group">
               <div className="text-6xl mb-8">{service.icon}</div>
-              <h3 className="text-white font-bold text-2xl mb-6 font-heading">{service.title}</h3>
-              <p className="text-gray-300 leading-relaxed text-base">{service.description}</p>
+              <h3 className="text-white font-bold text-2xl mb-6 font-heading">
+                {service.title}
+              </h3>
+              <p className="text-gray-300 leading-relaxed text-base">
+                {service.description}
+              </p>
             </div>
           ))}
         </div>

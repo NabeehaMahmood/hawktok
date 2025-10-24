@@ -20,11 +20,26 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/services" element={<PlaceholderPage title="Leistungen" />} />
-          <Route path="/about" element={<PlaceholderPage title="Darum Lumus" />} />
-          <Route path="/references" element={<PlaceholderPage title="Referenzen" />} />
-          <Route path="/team" element={<PlaceholderPage title="Unser Team" />} />
-          <Route path="/contact" element={<PlaceholderPage title="Kontakt" />} />
+          <Route
+            path="/services"
+            element={<PlaceholderPage title="Leistungen" />}
+          />
+          <Route
+            path="/about"
+            element={<PlaceholderPage title="Darum Lumus" />}
+          />
+          <Route
+            path="/references"
+            element={<PlaceholderPage title="Referenzen" />}
+          />
+          <Route
+            path="/team"
+            element={<PlaceholderPage title="Unser Team" />}
+          />
+          <Route
+            path="/contact"
+            element={<PlaceholderPage title="Kontakt" />}
+          />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -11,7 +11,7 @@ export default function Index() {
   return (
     <div className="min-h-screen flex flex-col bg-black">
       <Header transparent={true} />
-      
+
       <main className="flex-grow">
         <HeroSection />
         <ServicesSection />
