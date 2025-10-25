@@ -72,34 +72,6 @@ export default function HeroSection() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Logo animation on mount
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setLogoRotation((prev) => (prev + 1) % 360);
-    }, 50);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  // Interactive logo hover
-  const handleLogoMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!logoRef.current) return;
-
-    const rect = logoRef.current.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-
-    const angle = Math.atan2(e.clientY - centerY, e.clientX - centerX) * (180 / Math.PI);
-    setLogoRotation(angle);
-  };
-
-  const handleLogoMouseLeave = () => {
-    const interval = setInterval(() => {
-      setLogoRotation((prev) => (prev + 1) % 360);
-    }, 50);
-
-    return () => clearInterval(interval);
-  };
 
   return (
     <section 
