@@ -83,46 +83,15 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center">
-        {/* Animated Logo Circle */}
-        <div
-          ref={logoRef}
-          onMouseMove={handleLogoMouseMove}
-          onMouseLeave={handleLogoMouseLeave}
-          className="relative mb-8 cursor-pointer"
-          style={{
-            perspective: "1000px",
-          }}
-        >
-          {/* Rotating rings */}
-          <div
-            className="absolute inset-0 border-2 border-purple-500/50 rounded-full"
-            style={{
-              width: "200px",
-              height: "200px",
-              left: "-100px",
-              top: "-100px",
-              transform: `rotate(${logoRotation}deg)`,
-              transition: "transform 0.1s linear",
-            }}
-          />
-          <div
-            className="absolute inset-0 border-2 border-blue-500/30 rounded-full"
-            style={{
-              width: "280px",
-              height: "280px",
-              left: "-140px",
-              top: "-140px",
-              transform: `rotate(-${logoRotation * 0.8}deg)`,
-              transition: "transform 0.1s linear",
-            }}
-          />
-
-          {/* Main Logo */}
+        {/* Animated Logo */}
+        <div className="relative mb-8">
+          {/* Main Logo with floating animation */}
           <h1
-            className="relative z-20 text-white font-bold text-8xl md:text-9xl tracking-tighter text-center leading-none whitespace-nowrap"
+            className="text-white font-bold text-8xl md:text-9xl tracking-tighter text-center leading-none whitespace-nowrap"
             style={{
-              filter: "drop-shadow(0 0 30px rgba(168, 85, 247, 0.3))",
-              transition: "filter 0.3s ease",
+              filter: "drop-shadow(0 0 20px rgba(255, 255, 255, 0.1))",
+              animation: "float 6s ease-in-out infinite, glow 3s ease-in-out infinite",
+              letterSpacing: "-0.02em",
             }}
           >
             LUMUS
