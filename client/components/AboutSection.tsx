@@ -46,7 +46,7 @@ export default function AboutSection() {
               nur sichtbar sind, sondern Kunden bringen.
             </p>
             <a
-              href="/contact"
+              href="#contact"
               className="inline-block px-8 py-4 bg-white text-black font-bold rounded-lg hover:bg-gray-100 transition-colors duration-300"
             >
               Erstgespräch vereinbaren
