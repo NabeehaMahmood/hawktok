@@ -1,9 +1,7 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 export default function HeroSection() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const logoRef = useRef<HTMLDivElement>(null);
-  const [logoRotation, setLogoRotation] = useState(0);
 
   useEffect(() => {
     const canvas = canvasRef.current;
