@@ -6,6 +6,7 @@ import AboutSection from "@/components/AboutSection";
 import ReferencesSection from "@/components/ReferencesSection";
 import TeamSection from "@/components/TeamSection";
 import ContactSection from "@/components/ContactSection";
+import ScrollReveal from "@/components/ScrollReveal";
 import { useEffect, useState } from "react";
 
 export default function Index() {
