@@ -169,34 +169,31 @@
 
   @keyframes dynamicBounce {
     0%, 100% {
-      transform: translateY(0) scale(1);
+      transform: translateY(0) scale(1) perspective(1000px) rotateY(0deg) rotateX(0deg);
     }
     25% {
-      transform: translateY(-30px) scale(1.1);
+      transform: translateY(-35px) scale(1.1) perspective(1000px) rotateY(12deg) rotateX(-6deg);
     }
     50% {
-      transform: translateY(-50px) scale(0.95);
+      transform: translateY(-55px) scale(0.95) perspective(1000px) rotateY(-15deg) rotateX(8deg);
     }
     75% {
-      transform: translateY(-20px) scale(1.05);
+      transform: translateY(-25px) scale(1.05) perspective(1000px) rotateY(8deg) rotateX(-3deg);
     }
   }
 
   @keyframes spinRotate {
-    0% {
-      transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+    0%, 100% {
+      transform: rotateZ(0deg);
     }
     25% {
-      transform: perspective(1000px) rotateY(10deg) rotateX(-5deg);
+      transform: rotateZ(-5deg);
     }
     50% {
-      transform: perspective(1000px) rotateY(-10deg) rotateX(5deg);
+      transform: rotateZ(5deg);
     }
     75% {
-      transform: perspective(1000px) rotateY(5deg) rotateX(-2deg);
-    }
-    100% {
-      transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+      transform: rotateZ(-3deg);
     }
   }
 
