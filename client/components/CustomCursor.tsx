@@ -24,16 +24,6 @@ export default function CustomCursor() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    const colors = [
-      "rgba(168, 85, 247, ",
-      "rgba(59, 130, 246, ",
-      "rgba(34, 197, 94, ",
-      "rgba(236, 72, 153, ",
-      "rgba(245, 158, 11, ",
-      "rgba(14, 165, 233, ",
-      "rgba(168, 85, 247, ",
-    ];
-
     const handleMouseMove = (e: MouseEvent) => {
       mouseRef.current = { x: e.clientX, y: e.clientY };
 
@@ -48,7 +38,7 @@ export default function CustomCursor() {
           vx: Math.cos(angle) * velocity,
           vy: Math.sin(angle) * velocity,
           life: 1,
-          color: colors[Math.floor(Math.random() * colors.length)],
+          color: "rgba(255, 255, 255, ",
         });
       }
     };
