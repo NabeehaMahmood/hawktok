@@ -1,10 +1,10 @@
 export default function Footer() {
   const navItems = [
-    { label: "LEISTUNGEN", href: "/services" },
-    { label: "LUMUS", href: "/about" },
-    { label: "REFERENZEN", href: "/references" },
-    { label: "TEAM", href: "/team" },
-    { label: "KONTAKT", href: "/contact" },
+    { label: "LEISTUNGEN", href: "#services" },
+    { label: "LUMUS", href: "#about" },
+    { label: "REFERENZEN", href: "#references" },
+    { label: "TEAM", href: "#team" },
+    { label: "KONTAKT", href: "#contact" },
   ];
 
   return (
