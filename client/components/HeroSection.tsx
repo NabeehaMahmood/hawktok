@@ -95,10 +95,10 @@ export default function HeroSection() {
                 className="text-white font-bold text-8xl md:text-9xl tracking-tighter leading-none inline-block"
                 style={{
                   filter: "drop-shadow(0 0 20px rgba(255, 255, 255, 0.1))",
-                  animation: `dynamicBounce 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) infinite,
-                              spinRotate 2s ease-in-out infinite,
-                              glow 2s ease-in-out infinite`,
-                  animationDelay: `${index * 0.1}s`,
+                  animation: `dynamicBounce 1s cubic-bezier(0.34, 1.56, 0.64, 1) infinite,
+                              spinRotate 1.5s ease-in-out infinite,
+                              glow 1.5s ease-in-out infinite`,
+                  animationDelay: `${index * 0.08}s`,
                   transformOrigin: "center center",
                 }}
               >
