@@ -73,8 +73,10 @@ export default function HeroSection() {
   }, []);
 
 
+  const letters = "LUMUS".split("");
+
   return (
-    <section 
+    <section
       id="hero"
       className="relative w-full h-screen bg-black overflow-hidden pt-20"
     >
@@ -84,18 +86,26 @@ export default function HeroSection() {
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center">
         {/* Animated Logo */}
-        <div className="relative mb-8">
-          {/* Main Logo with floating animation */}
-          <h1
-            className="text-white font-bold text-8xl md:text-9xl tracking-tighter text-center leading-none whitespace-nowrap"
-            style={{
-              filter: "drop-shadow(0 0 20px rgba(255, 255, 255, 0.1))",
-              animation: "float 6s ease-in-out infinite, glow 3s ease-in-out infinite",
-              letterSpacing: "-0.02em",
-            }}
-          >
-            LUMUS
-          </h1>
+        <div className="relative mb-8 flex justify-center items-center">
+          {/* Main Logo with dynamic animations */}
+          <div className="flex gap-1">
+            {letters.map((letter, index) => (
+              <span
+                key={index}
+                className="text-white font-bold text-8xl md:text-9xl tracking-tighter leading-none inline-block"
+                style={{
+                  filter: "drop-shadow(0 0 20px rgba(255, 255, 255, 0.1))",
+                  animation: `dynamicBounce 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) infinite,
+                              spinRotate 2s ease-in-out infinite,
+                              glow 2s ease-in-out infinite`,
+                  animationDelay: `${index * 0.1}s`,
+                  transformOrigin: "center center",
+                }}
+              >
+                {letter}
+              </span>
+            ))}
+          </div>
         </div>
 
         {/* Subtitle quote */}
