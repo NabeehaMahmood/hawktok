@@ -1,23 +1,21 @@
 export default function ContactSection() {
   return (
-    <section id="contact" className="bg-black py-32 px-6 scroll-mt-20">
+    <section id="contact" className="py-32 px-6 scroll-mt-20 transition-all duration-1000 ease-out">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
           {/* Left Column */}
           <div>
             <h2 className="text-white font-bold text-5xl md:text-6xl font-heading tracking-tight mb-8">
-              Lassen Sie uns sprechen.
+              Let's talk.
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed mb-12">
-              Wir freuen uns, von Ihnen zu hören. Egal ob Sie ein bestehendes
-              Projekt optimieren möchten oder von Grund auf neu starten – lassen
-              Sie uns gemeinsam ihre Ziele erreichen.
+              We're looking forward to hearing from you. Whether you want to optimize an existing project or start from scratch - let's achieve your goals together.
             </p>
             <a
               href="#contact"
               className="inline-block px-8 py-4 bg-white text-black font-bold rounded-lg hover:bg-gray-100 transition-colors duration-300"
             >
-              Beratungsgespräch vereinbaren
+              Schedule consultation
             </a>
           </div>
 
@@ -25,11 +23,11 @@ export default function ContactSection() {
           <div className="space-y-8">
             <div>
               <h3 className="text-white font-bold text-lg mb-4 font-heading">
-                Kontakt
+                Contact
               </h3>
               <div className="space-y-3">
                 <div>
-                  <p className="text-gray-500 text-sm mb-1">E-Mail</p>
+                  <p className="text-gray-500 text-sm mb-1">Email</p>
                   <a
                     href="mailto:info@lumus.de"
                     className="text-white hover:text-gray-300 transition-colors font-medium"
@@ -38,7 +36,7 @@ export default function ContactSection() {
                   </a>
                 </div>
                 <div>
-                  <p className="text-gray-500 text-sm mb-1">Telefon</p>
+                  <p className="text-gray-500 text-sm mb-1">Phone</p>
                   <a
                     href="tel:+49157361482485"
                     className="text-white hover:text-gray-300 transition-colors font-medium"
@@ -51,8 +49,7 @@ export default function ContactSection() {
 
             <div className="pt-8 border-t border-gray-800">
               <p className="text-gray-400 text-sm">
-                Wir sind Ihr Partner für Performance Marketing, Webdesign und
-                digitale Transformation.
+                We are your partner for performance marketing, web design and digital transformation.
               </p>
             </div>
           </div>

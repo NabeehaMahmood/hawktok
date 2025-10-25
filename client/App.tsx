@@ -7,6 +7,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Index from "./pages/Index";
 import CustomCursor from "@/components/CustomCursor";
+import SectionObserver from "@/components/SectionObserver";
 
 const queryClient = new QueryClient();
 
@@ -16,6 +17,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <CustomCursor />
+      <SectionObserver />
       <Index />
     </TooltipProvider>
   </QueryClientProvider>

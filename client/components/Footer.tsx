@@ -1,10 +1,10 @@
 export default function Footer() {
   const navItems = [
-    { label: "LEISTUNGEN", href: "#services" },
+    { label: "SERVICES", href: "#services" },
     { label: "LUMUS", href: "#about" },
-    { label: "REFERENZEN", href: "#references" },
+    { label: "REFERENCES", href: "#references" },
     { label: "TEAM", href: "#team" },
-    { label: "KONTAKT", href: "#contact" },
+    { label: "CONTACT", href: "#contact" },
   ];
 
   return (
@@ -29,7 +29,7 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h3 className="text-white text-lg font-semibold mb-4">
-              Kontaktiere uns:
+              Contact us:
             </h3>
             <a
               href="mailto:info@lumus.de"
@@ -80,17 +80,17 @@ export default function Footer() {
         {/* Bottom Footer */}
         <div className="border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-600 text-sm">
-            © LUMUS DIGITAL. Alle Rechte vorbehalten.
+            © LUMUS DIGITAL. All rights reserved.
           </p>
           <div className="flex gap-6 text-gray-600 text-sm mt-4 md:mt-0">
             <a
               href="/datenschutz"
               className="hover:text-white transition-colors"
             >
-              Datenschutz
+              Privacy Policy
             </a>
             <a href="/impressum" className="hover:text-white transition-colors">
-              Impressum
+              Imprint
             </a>
           </div>
         </div>

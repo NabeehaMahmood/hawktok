@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import TextReveal from "@/components/TextReveal";
 
 export default function HeroSection() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -77,7 +78,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative w-full h-screen bg-black overflow-hidden pt-20"
+      className="relative w-full h-screen overflow-hidden pt-20"
     >
       {/* Background video/canvas */}
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
@@ -109,18 +110,16 @@ export default function HeroSection() {
 
         {/* Subtitle quote */}
         <div className="mt-24 max-w-2xl text-center px-6">
-          <p className="text-white text-xl md:text-2xl font-light tracking-wide animate-fade-in">
-            Nach unzähligen Websites, Kampagnen und einer Menge Adspend wissen
-            wir, wie Marketing wirklich funktioniert.
-          </p>
+          <TextReveal
+            className="text-white text-xl md:text-2xl font-light tracking-wide"
+            delay={2000}
+            speed={30}
+          >
+            After countless websites, campaigns and a lot of ad spend, we know how marketing really works.
+          </TextReveal>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-white rounded-full flex items-start justify-center p-2">
-            <div className="w-1 h-2 bg-white rounded-full animate-pulse"></div>
-          </div>
-        </div>
+
       </div>
     </section>
   );

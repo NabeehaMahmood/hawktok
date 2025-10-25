@@ -16,14 +16,13 @@ export default function PlaceholderPage({ title }: PlaceholderPageProps) {
             {title}
           </h1>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-12">
-            Diese Seite wird gerade noch aufgebaut. Schreiben Sie uns eine
-            Nachricht, wenn Sie mehr über diesen Bereich erfahren möchten.
+            This page is still being built. Write us a message if you want to learn more about this area.
           </p>
           <a
             href="/"
             className="inline-block px-8 py-4 bg-white text-black font-bold rounded-lg hover:bg-gray-100 transition-colors duration-300"
           >
-            Zurück zur Startseite
+            Back to homepage
           </a>
         </div>
       </main>

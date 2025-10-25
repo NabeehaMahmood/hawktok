@@ -4,6 +4,7 @@ import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
 import AboutSection from "@/components/AboutSection";
 import ReferencesSection from "@/components/ReferencesSection";
+import ShowcaseSection from "@/components/ShowcaseSection";
 import TeamSection from "@/components/TeamSection";
 import ContactSection from "@/components/ContactSection";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -22,26 +23,17 @@ export default function Index() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-black">
+    <div className="min-h-screen flex flex-col">
       <Header transparent={!isScrolled} />
 
       <main className="flex-grow">
         <HeroSection />
-        <ScrollReveal>
-          <ServicesSection />
-        </ScrollReveal>
-        <ScrollReveal>
-          <AboutSection />
-        </ScrollReveal>
-        <ScrollReveal>
-          <ReferencesSection />
-        </ScrollReveal>
-        <ScrollReveal>
-          <TeamSection />
-        </ScrollReveal>
-        <ScrollReveal>
-          <ContactSection />
-        </ScrollReveal>
+        <ServicesSection />
+        <AboutSection />
+        <ReferencesSection />
+        <ShowcaseSection />
+        <TeamSection />
+        <ContactSection />
       </main>
 
       <Footer />

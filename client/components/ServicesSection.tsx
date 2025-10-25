@@ -1,32 +1,32 @@
 export default function ServicesSection() {
   const services = [
     {
-      title: "Webdesign",
+      title: "Web Design",
       icon: "🌐",
       description:
-        "Wir gestalten und entwickeln Websites, die nicht nur gut aussehen, sondern gezielt verkaufen. Schnell, intuitiv und messbar effektiv.",
+        "We design and develop websites that not only look good, but sell purposefully. Fast, intuitive and measurably effective.",
     },
     {
       title: "SEO & SEA",
       icon: "📊",
       description:
-        "Von datengetriebenen Google & Meta Ads bis zur langfristigen SEO-Strategie: Wir sorgen für Sichtbarkeit, die nicht nur Klicks bringt, sondern Kunden.",
+        "From data-driven Google & Meta Ads to long-term SEO strategy: We ensure visibility that not only brings clicks, but customers.",
     },
     {
-      title: "Automatisierung",
+      title: "Automation",
       icon: "⚙️",
       description:
-        "Wir bauen Marketing-Prozesse, die sich selbst steuern. Mit KI, Systemen und Tools, die Ihnen Zeit sparen und Ihr Business skalieren.",
+        "We build marketing processes that steer themselves. With AI, systems and tools that save you time and scale your business.",
     },
   ];
 
   return (
-    <section id="services" className="bg-dark-blue py-32 px-6 scroll-mt-20">
+    <section id="services" className="py-32 px-6 scroll-mt-20 transition-all duration-1000 ease-out">
       <div className="container mx-auto">
         {/* Section Title */}
         <div className="text-center mb-20">
           <h2 className="text-white font-bold text-5xl md:text-6xl font-heading tracking-tight mb-12">
-            Leistungen
+            Services
           </h2>
         </div>
 

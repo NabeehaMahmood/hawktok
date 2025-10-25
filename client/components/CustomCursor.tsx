@@ -28,7 +28,7 @@ export default function CustomCursor() {
       mouseRef.current = { x: e.clientX, y: e.clientY };
 
       // Create particles
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < 2; i++) {
         const angle = Math.random() * Math.PI * 2;
         const velocity = Math.random() * 3 + 1;
 
@@ -63,18 +63,6 @@ export default function CustomCursor() {
         }
         return false;
       });
-
-      // Draw cursor circle
-      ctx.beginPath();
-      ctx.strokeStyle = "rgba(168, 85, 247, 0.5)";
-      ctx.lineWidth = 2;
-      ctx.arc(mouseRef.current.x, mouseRef.current.y, 8, 0, Math.PI * 2);
-      ctx.stroke();
-
-      ctx.beginPath();
-      ctx.fillStyle = "rgba(168, 85, 247, 0.2)";
-      ctx.arc(mouseRef.current.x, mouseRef.current.y, 8, 0, Math.PI * 2);
-      ctx.fill();
 
       requestAnimationFrame(animate);
     };

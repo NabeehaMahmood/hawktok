@@ -2,54 +2,51 @@ export default function AboutSection() {
   const benefits = [
     {
       number: "01",
-      title: "Datengetrieben",
+      title: "Data-driven",
       description:
-        "Jede Entscheidung basiert auf Daten, nicht auf Bauchgefühl.",
+        "Every decision is based on data, not gut feeling.",
     },
     {
       number: "02",
       title: "Transparent",
       description:
-        "Vollständige Transparenz über Kosten, Prozesse und Ergebnisse.",
+        "Complete transparency about costs, processes and results.",
     },
     {
       number: "03",
-      title: "Ergebnisorientiert",
+      title: "Results-oriented",
       description:
-        "Unser Erfolg ist an Ihre messbaren Geschäftsergebnisse gebunden.",
+        "Our success is tied to your measurable business results.",
     },
     {
       number: "04",
-      title: "Modern & Agil",
-      description: "Wir nutzen die neuesten Tools, Methoden und Technologien.",
+      title: "Modern & Agile",
+      description: "We use the latest tools, methods and technologies.",
     },
     {
       number: "05",
-      title: "Verlässlich",
-      description: "Langfristige Partnerschaften mit echtem Mehrwert.",
+      title: "Reliable",
+      description: "Long-term partnerships with real added value.",
     },
   ];
 
   return (
-    <section id="about" className="bg-black py-32 px-6 scroll-mt-20">
+    <section id="about" className="py-32 px-6 scroll-mt-20 transition-all duration-1000 ease-out">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-start">
           {/* Left Column */}
           <div>
             <h2 className="text-white font-bold text-5xl md:text-6xl font-heading tracking-tight mb-8">
-              Darum Lumus
+              Why Lumus
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed mb-12">
-              Unsere Art zu arbeiten ist anders. Wir kombinieren kreative
-              Excellence mit analytischer Präzision. Das Ergebnis: Websites, die
-              nicht nur schön sind, sondern auch verkaufen. Kampagnen, die nicht
-              nur sichtbar sind, sondern Kunden bringen.
+              Our way of working is different. We combine creative excellence with analytical precision. The result: Websites that are not only beautiful, but also sell. Campaigns that are not only visible, but bring customers.
             </p>
             <a
               href="#contact"
               className="inline-block px-8 py-4 bg-white text-black font-bold rounded-lg hover:bg-gray-100 transition-colors duration-300"
             >
-              Erstgespräch vereinbaren
+              Schedule initial consultation
             </a>
           </div>
 

@@ -2,12 +2,12 @@ export default function TeamSection() {
   const team = [
     {
       name: "Jonas Rüttgers",
-      role: "Kreativer Kopf für SEO & SEA",
+      role: "Creative Head for SEO & SEA",
       initials: "JR",
     },
     {
       name: "Sharon Cottone",
-      role: "Expertin für Social Media & KI",
+      role: "Expert for Social Media & AI",
       initials: "SC",
     },
     {
@@ -18,16 +18,15 @@ export default function TeamSection() {
   ];
 
   return (
-    <section id="team" className="bg-dark-blue py-32 px-6 scroll-mt-20">
+    <section id="team" className="py-32 px-6 scroll-mt-20 transition-all duration-1000 ease-out">
       <div className="container mx-auto">
         {/* Section Title */}
         <div className="text-center mb-24">
           <h2 className="text-white font-bold text-5xl md:text-6xl font-heading tracking-tight mb-6">
-            Ansprechpartner
+            Team
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Unser erfahrenes Team bringt Expertise aus Performance Marketing,
-            Webentwicklung und KI zusammen.
+            Our experienced team brings together expertise from performance marketing, web development and AI.
           </p>
         </div>
 

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -7,18 +7,91 @@ interface HeaderProps {
 }
 
 export default function Header({ transparent = true }: HeaderProps) {
+  const headerRef = useRef<HTMLElement | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("hero");
+  const [isHeroVisible, setIsHeroVisible] = useState(true);
 
   const navItems = [
-    { label: "LEISTUNGEN", href: "#services" },
-    { label: "LUMUS", href: "#about" },
-    { label: "REFERENZEN", href: "#references" },
-    { label: "TEAM", href: "#team" },
-    { label: "KONTAKT", href: "#contact" },
+    { label: "SERVICES", href: "#services", id: "services" },
+    { label: "LUMUS", href: "#about", id: "about" },
+    { label: "REFERENCES", href: "#references", id: "references" },
+    { label: "TEAM", href: "#team", id: "team" },
+    { label: "CONTACT", href: "#contact", id: "contact" },
   ];
 
-  return (
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+
+          // Track hero section visibility
+          if (entry.target.id === "hero") {
+            setIsHeroVisible(entry.isIntersecting);
+          }
+        });
+      },
+      {
+        rootMargin: "-50% 0px -50% 0px",
+        threshold: 0,
+      }
+    );
+
+    // Observe all sections
+    navItems.forEach((item) => {
+      const element = document.getElementById(item.id);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    // Also observe hero section
+    const heroElement = document.getElementById("hero");
+    if (heroElement) {
+      observer.observe(heroElement);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Keep the --header-height CSS variable in sync with the actual header height
+  useEffect(() => {
+    const setHeaderHeight = () => {
+      const height = headerRef.current?.offsetHeight ?? 80;
+      document.documentElement.style.setProperty("--header-height", `${height}px`);
+    };
+
+    setHeaderHeight();
+    window.addEventListener("resize", setHeaderHeight);
+    return () => window.removeEventListener("resize", setHeaderHeight);
+  }, []);
+
+
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent> | undefined,
+    id?: string
+  ) => {
+    if (e) e.preventDefault();
+    if (!id) return;
+    const el = document.getElementById(id);
+    if (!el) return;
+
+    const headerHeightRaw = getComputedStyle(document.documentElement).getPropertyValue("--header-height");
+    const headerHeight = parseFloat(headerHeightRaw) || headerRef.current?.offsetHeight || 80;
+
+    const reductionPx = 0; // Small reduction to avoid exact alignment
+
+    const targetY = el.getBoundingClientRect().top + window.scrollY - headerHeight - reductionPx;
+    window.scrollTo({ top: Math.max(0, targetY), behavior: "smooth" });
+    setMobileMenuOpen(false);
+  };
+
+  return isHeroVisible ? (
     <header
+      ref={headerRef}
       className={cn(
         "fixed w-full top-0 z-50 transition-all duration-300",
         transparent ? "bg-transparent" : "bg-black/95 backdrop-blur-sm",
@@ -44,7 +117,13 @@ export default function Header({ transparent = true }: HeaderProps) {
             <a
               key={item.href}
               href={item.href}
-              className="text-gray-400 hover:text-white text-sm font-medium uppercase tracking-wide transition-colors duration-300"
+              onClick={(e) => handleNavClick(e, item.id)}
+              className={cn(
+                "text-sm font-medium uppercase tracking-wide transition-colors duration-300",
+                activeSection === item.id
+                  ? "text-white"
+                  : "text-gray-400 hover:text-white"
+              )}
             >
               {item.label}
             </a>
@@ -95,8 +174,13 @@ export default function Header({ transparent = true }: HeaderProps) {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-gray-400 hover:text-white text-sm font-medium uppercase tracking-wide transition-colors duration-300"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={(e) => handleNavClick(e, item.id)}
+                className={cn(
+                  "text-sm font-medium uppercase tracking-wide transition-colors duration-300",
+                  activeSection === item.id
+                    ? "text-white"
+                    : "text-gray-400 hover:text-white"
+                )}
               >
                 {item.label}
               </a>
@@ -123,5 +207,5 @@ export default function Header({ transparent = true }: HeaderProps) {
         </div>
       )}
     </header>
-  );
+  ) : null;
 }
