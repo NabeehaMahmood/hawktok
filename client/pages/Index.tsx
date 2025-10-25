@@ -27,21 +27,21 @@ export default function Index() {
 
       <main className="flex-grow">
         <HeroSection />
-        <div className="opacity-0 animate-fade-in">
+        <ScrollReveal>
           <ServicesSection />
-        </div>
-        <div className="opacity-0 animate-fade-in">
+        </ScrollReveal>
+        <ScrollReveal>
           <AboutSection />
-        </div>
-        <div className="opacity-0 animate-fade-in">
+        </ScrollReveal>
+        <ScrollReveal>
           <ReferencesSection />
-        </div>
-        <div className="opacity-0 animate-fade-in">
+        </ScrollReveal>
+        <ScrollReveal>
           <TeamSection />
-        </div>
-        <div className="opacity-0 animate-fade-in">
+        </ScrollReveal>
+        <ScrollReveal>
           <ContactSection />
-        </div>
+        </ScrollReveal>
       </main>
 
       <Footer />
