@@ -29,7 +29,7 @@ export default function CustomCursor() {
 
       // Create particles
       for (let i = 0; i < 5; i++) {
-        const angle = (Math.random() * Math.PI * 2);
+        const angle = Math.random() * Math.PI * 2;
         const velocity = Math.random() * 3 + 1;
 
         particlesRef.current.push({

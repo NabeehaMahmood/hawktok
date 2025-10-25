@@ -72,7 +72,6 @@ export default function HeroSection() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-
   const letters = "LUMUS".split("");
 
   return (
@@ -111,8 +110,8 @@ export default function HeroSection() {
         {/* Subtitle quote */}
         <div className="mt-24 max-w-2xl text-center px-6">
           <p className="text-white text-xl md:text-2xl font-light tracking-wide animate-fade-in">
-            Nach unzähligen Websites, Kampagnen und einer Menge Adspend wissen wir, wie Marketing
-            wirklich funktioniert.
+            Nach unzähligen Websites, Kampagnen und einer Menge Adspend wissen
+            wir, wie Marketing wirklich funktioniert.
           </p>
         </div>
 

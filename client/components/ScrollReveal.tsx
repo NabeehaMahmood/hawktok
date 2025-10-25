@@ -5,7 +5,10 @@ interface ScrollRevealProps {
   className?: string;
 }
 
-export default function ScrollReveal({ children, className = "" }: ScrollRevealProps) {
+export default function ScrollReveal({
+  children,
+  className = "",
+}: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -22,7 +25,7 @@ export default function ScrollReveal({ children, className = "" }: ScrollRevealP
       {
         threshold: 0.1,
         rootMargin: "0px 0px -50px 0px",
-      }
+      },
     );
 
     if (ref.current) {
