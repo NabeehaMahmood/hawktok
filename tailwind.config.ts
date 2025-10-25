@@ -115,16 +115,30 @@ export default {
             transform: "translateX(-100%)",
           },
         },
+        "fade-in": {
+          from: {
+            opacity: "0",
+          },
+          to: {
+            opacity: "1",
+          },
+        },
+        "slide-up": {
+          from: {
+            opacity: "0",
+            transform: "translateY(20px)",
+          },
+          to: {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "rotate-360": "rotate-360 20s linear infinite",
         "scroll-left": "scroll-left 60s linear infinite",
-        "fade-in": "fade-in 0.8s ease-in",
-        "slide-up": "slide-up 0.8s ease-out",
-      },
-      animation: {
         "fade-in": "fade-in 0.8s ease-in",
         "slide-up": "slide-up 0.8s ease-out",
       },
