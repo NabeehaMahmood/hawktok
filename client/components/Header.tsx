@@ -27,7 +27,7 @@ export default function Header({ transparent = true }: HeaderProps) {
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <div className="flex-shrink-0">
-          <a href="/" className="text-white font-bold text-2xl tracking-wider">
+          <a href="#hero" className="text-white font-bold text-2xl tracking-wider hover:opacity-80 transition-opacity duration-300">
             LUMUS
             <span className="block text-xs font-normal tracking-widest">
               DIGITAL
