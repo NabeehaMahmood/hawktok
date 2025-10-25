@@ -18,7 +18,7 @@ export default function TeamSection() {
   ];
 
   return (
-    <section className="bg-dark-blue py-32 px-6">
+    <section id="team" className="bg-dark-blue py-32 px-6 scroll-mt-20">
       <div className="container mx-auto">
         {/* Section Title */}
         <div className="text-center mb-24">
