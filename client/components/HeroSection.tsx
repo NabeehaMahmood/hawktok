@@ -1,7 +1,9 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function HeroSection() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const logoRef = useRef<HTMLDivElement>(null);
+  const [logoRotation, setLogoRotation] = useState(0);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -72,22 +74,96 @@ export default function HeroSection() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Logo animation on mount
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setLogoRotation((prev) => (prev + 1) % 360);
+    }, 50);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // Interactive logo hover
+  const handleLogoMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!logoRef.current) return;
+
+    const rect = logoRef.current.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+
+    const angle = Math.atan2(e.clientY - centerY, e.clientX - centerX) * (180 / Math.PI);
+    setLogoRotation(angle);
+  };
+
+  const handleLogoMouseLeave = () => {
+    const interval = setInterval(() => {
+      setLogoRotation((prev) => (prev + 1) % 360);
+    }, 50);
+
+    return () => clearInterval(interval);
+  };
+
   return (
-    <section className="relative w-full h-screen bg-black overflow-hidden pt-20">
+    <section 
+      id="hero"
+      className="relative w-full h-screen bg-black overflow-hidden pt-20"
+    >
       {/* Background video/canvas */}
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
 
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center">
-        <h1 className="text-white font-bold text-8xl md:text-9xl tracking-tighter text-center leading-none mb-8">
-          LUMUS
-        </h1>
+        {/* Animated Logo Circle */}
+        <div
+          ref={logoRef}
+          onMouseMove={handleLogoMouseMove}
+          onMouseLeave={handleLogoMouseLeave}
+          className="relative mb-8 cursor-pointer"
+          style={{
+            perspective: "1000px",
+          }}
+        >
+          {/* Rotating rings */}
+          <div
+            className="absolute inset-0 border-2 border-purple-500/50 rounded-full"
+            style={{
+              width: "200px",
+              height: "200px",
+              left: "-100px",
+              top: "-100px",
+              transform: `rotate(${logoRotation}deg)`,
+              transition: "transform 0.1s linear",
+            }}
+          />
+          <div
+            className="absolute inset-0 border-2 border-blue-500/30 rounded-full"
+            style={{
+              width: "280px",
+              height: "280px",
+              left: "-140px",
+              top: "-140px",
+              transform: `rotate(-${logoRotation * 0.8}deg)`,
+              transition: "transform 0.1s linear",
+            }}
+          />
+
+          {/* Main Logo */}
+          <h1
+            className="relative z-20 text-white font-bold text-8xl md:text-9xl tracking-tighter text-center leading-none whitespace-nowrap"
+            style={{
+              filter: "drop-shadow(0 0 30px rgba(168, 85, 247, 0.3))",
+              transition: "filter 0.3s ease",
+            }}
+          >
+            LUMUS
+          </h1>
+        </div>
 
         {/* Subtitle quote */}
-        <div className="mt-24 max-w-2xl text-center">
-          <p className="text-white text-xl md:text-2xl font-light tracking-wide">
-            Nach unzähligen Websites, Kampagnen und einer Menge Adspend wissen
-            wir, wie Marketing wirklich funktioniert.
+        <div className="mt-24 max-w-2xl text-center px-6">
+          <p className="text-white text-xl md:text-2xl font-light tracking-wide animate-fade-in">
+            Nach unzähligen Websites, Kampagnen und einer Menge Adspend wissen wir, wie Marketing
+            wirklich funktioniert.
           </p>
         </div>
 
