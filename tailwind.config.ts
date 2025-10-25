@@ -121,6 +121,12 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
         "rotate-360": "rotate-360 20s linear infinite",
         "scroll-left": "scroll-left 60s linear infinite",
+        "fade-in": "fade-in 0.8s ease-in",
+        "slide-up": "slide-up 0.8s ease-out",
+      },
+      animation: {
+        "fade-in": "fade-in 0.8s ease-in",
+        "slide-up": "slide-up 0.8s ease-out",
       },
     },
   },
