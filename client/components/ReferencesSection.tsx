@@ -24,7 +24,7 @@ export default function ReferencesSection() {
   ];
 
   return (
-    <section className="bg-black py-32 px-6">
+    <section id="references" className="bg-black py-32 px-6 scroll-mt-20">
       <div className="container mx-auto">
         {/* Section Title */}
         <div className="text-center mb-24">
