@@ -21,7 +21,7 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="bg-dark-blue py-32 px-6">
+    <section id="services" className="bg-dark-blue py-32 px-6 scroll-mt-20">
       <div className="container mx-auto">
         {/* Section Title */}
         <div className="text-center mb-20">
