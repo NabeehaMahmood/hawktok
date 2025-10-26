@@ -113,9 +113,7 @@
     --sidebar-border: 240 4.8% 20%;
     --sidebar-ring: 268.5 100% 55%;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
@@ -139,7 +137,7 @@
 
 
   section > .container {
-    margin-block-start: -80px;
+    margin-block-start: -50px;
     margin-block-end: -50px;
   }
 
@@ -215,6 +213,16 @@
 
   button {
     @apply transition-all duration-300;
+  }
+
+  /* Hide scrollbar */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
   }
 
   @keyframes dynamicBounce {
