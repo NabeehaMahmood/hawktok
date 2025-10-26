@@ -7,6 +7,7 @@ import ReferencesSection from "@/components/ReferencesSection";
 import ShowcaseSection from "@/components/ShowcaseSection";
 import TeamSection from "@/components/TeamSection";
 import ContactSection from "@/components/ContactSection";
+import SmoothPageTransition from "@/components/SmoothPageTransition";
 import ScrollReveal from "@/components/ScrollReveal";
 import { useEffect, useState } from "react";
 
@@ -24,6 +25,7 @@ export default function Index() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SmoothPageTransition />
       <Header transparent={!isScrolled} />
 
       <main className="flex-grow">

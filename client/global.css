@@ -14,6 +14,11 @@
     transition: background-color 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
+  /* CSS custom property for dynamic text color */
+  :root {
+    --dynamic-text-color: rgb(255, 255, 255);
+  }
+
   /* Smooth section transitions */
   section {
     opacity: 0;
@@ -126,7 +131,7 @@
     scroll-margin-top: var(--header-height);
   }
 
-  /* Reduce top and bottom spacing for all sections by 5px as requested */
+  /* Reduce top and bottom spacing for all sections by 5px */
   section {
     margin-block-start: -5px;
     margin-block-end: -5px;
@@ -134,7 +139,7 @@
 
 
   section > .container {
-    margin-block-start: -50px;
+    margin-block-start: -80px;
     margin-block-end: -50px;
   }
 
@@ -359,3 +364,40 @@
 
 /* Slight additional smoothing for body background transitions; kept short to feel natural */
 body { transition: background-color 1s cubic-bezier(.25,.46,.45,.94); }
+
+/* Dynamic text color that adapts to the smooth background transitions */
+.text-dynamic {
+  color: var(--dynamic-text-color) !important;
+  transition: color 0.3s ease-out;
+}
+
+/* Make sections transparent to show the smooth background */
+#services, #about, #references, #showcase, #team, #contact {
+  background: transparent !important;
+}
+
+/* Override hardcoded text colors for smooth transitions */
+#services h2, #services h3, #services p, #services span,
+#about h2, #about h3, #about p, #about span,
+#references h2, #references h3, #references p, #references span,
+#showcase h2, #showcase h3, #showcase p, #showcase span,
+#team h2, #team h3, #team p, #team span,
+#contact h2, #contact h3, #contact p, #contact span {
+  color: var(--dynamic-text-color) !important;
+  transition: color 0.3s ease-out;
+}
+
+/* Handle links and buttons */
+#services a:not(.text-black):not(.bg-white), 
+#about a:not(.text-black):not(.bg-white), 
+#references a:not(.text-black):not(.bg-white), 
+#showcase a:not(.text-black):not(.bg-white), 
+#team a:not(.text-black):not(.bg-white), 
+#contact a:not(.text-black):not(.bg-white) {
+  color: var(--dynamic-text-color) !important;
+}
+
+/* Ensure buttons with bg-white always have black text */
+.bg-white, .bg-white * {
+  color: rgb(0, 0, 0) !important;
+}
