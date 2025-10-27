@@ -1,6 +1,14 @@
 /** @import must precede all other statements */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Montserrat:wght@400;600;700;800&display=swap");
 
+@font-face {
+  font-family: 'Signord';
+  src: url('/fonts/signord.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -194,6 +202,15 @@
 
   h4 {
     @apply text-lg;
+  }
+
+  .gradient-heading {
+    background: linear-gradient(to right, #FF0050 0%, #FF1A66 14%, #EE2A7B 28%, #69C9D0 42%, #00F2EA 57%, #00D4FF 71%, #0099FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 300% 100%;
+    background-position: left center;
   }
 
   :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {

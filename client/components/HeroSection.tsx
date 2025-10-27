@@ -110,52 +110,20 @@ export default function HeroSection() {
       {/* Content */}
       <div className="relative z-10 min-h-screen flex flex-col items-center justify-center">
         {/* HAWKTOK Logo Image */}
-        <div className="-mt-48 mb-2 flex justify-center items-center">
+        <div className="-mt-14 mb-6 flex justify-center items-center">
           <div className="relative group">
             {/* Glow effect behind logo */}
             <div className="absolute inset-8 bg-white/0 group-hover:bg-white/40 blur-2xl rounded-full transition-all duration-500 ease-out scale-75 group-hover:scale-100" />
             <img 
               src="/HAWKTOK-logo.svg" 
               alt="HAWKTOK Logo"
-              className="relative w-72 h-72 md:w-96 md:h-96 object-contain transition-transform duration-300 group-hover:scale-105"
+              className="relative w-96 h-96 md:w-[32rem] md:h-[32rem] object-contain transition-transform duration-300 group-hover:scale-105"
             />
           </div>
         </div>
 
-        {/* Animated Logo */}
-        <div className="relative mb-8 flex justify-center items-center group">
-          <h1 
-            className="text-6xl md:text-7xl font-bold tracking-[0.2em] transition-all duration-300"
-            style={{
-              fontFamily: 'Signord, sans-serif',
-            }}
-          >
-            {/* White text by default */}
-            <span 
-              className="absolute inset-0 group-hover:opacity-0 transition-opacity duration-300"
-              style={{
-                color: '#FFFFFF',
-              }}
-            >
-              HAWKTOK
-            </span>
-            {/* Gradient text on hover */}
-            <span 
-              className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              style={{
-                background: 'linear-gradient(to right, #FF0050 0%, #FF1A66 14%, #EE2A7B 28%, #69C9D0 42%, #00F2EA 57%, #00D4FF 71%, #0099FF 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-              }}
-            >
-              HAWKTOK
-            </span>
-          </h1>
-        </div>
-
         {/* Subtitle quote */}
-        <div className="mt-16 mb-12 max-w-2xl text-center px-6">
+        <div className="mt-0 mb-12 max-w-2xl text-center px-6">
           <TextReveal
             className="text-white text-xl md:text-2xl font-light tracking-wide"
             delay={50}

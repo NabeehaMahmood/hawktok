@@ -17,9 +17,40 @@ export default function ShowcaseSection() {
       <div className="container mx-auto">
         {/* Section Title */}
         <div className="text-center mb-24">
-          <h2 className="text-white font-bold text-5xl md:text-6xl font-heading tracking-tight">
-            Showcases
-          </h2>
+          <div className="flex justify-center">
+            <svg
+              viewBox="0 0 600 100"
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-auto h-[4rem] md:h-[5rem]"
+              role="img"
+              aria-label="Showcases"
+            >
+              <defs>
+                <linearGradient id="showcasesGradient" gradientUnits="userSpaceOnUse" x1="0" x2="600" y1="0" y2="0">
+                  <stop offset="0%" stopColor="#FF0050" />
+                  <stop offset="14%" stopColor="#FF1A66" />
+                  <stop offset="28%" stopColor="#EE2A7B" />
+                  <stop offset="42%" stopColor="#69C9D0" />
+                  <stop offset="57%" stopColor="#00F2EA" />
+                  <stop offset="71%" stopColor="#00D4FF" />
+                  <stop offset="100%" stopColor="#0099FF" />
+                </linearGradient>
+              </defs>
+              <text
+                x="300"
+                y="60"
+                textAnchor="middle"
+                dominantBaseline="central"
+                fontWeight={700}
+                fontSize={80}
+                fontFamily="inherit"
+                fill="url(#showcasesGradient)"
+                className="font-heading"
+              >
+                Showcases
+              </text>
+            </svg>
+          </div>
         </div>
 
         {/* Showcases Grid */}
@@ -32,7 +63,7 @@ export default function ShowcaseSection() {
               {/* Video placeholder with overlay */}
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 flex items-end p-8 group-hover:from-black/20 transition-all duration-300">
                 <div>
-                  <h4 className="text-white font-bold text-xl mb-2">
+                  <h4 className="gradient-heading font-bold text-xl mb-2">
                     {showcase.title}
                   </h4>
                   <p className="text-gray-300 text-sm">{showcase.client}</p>
