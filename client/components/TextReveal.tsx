@@ -21,15 +21,15 @@ export default function TextReveal({
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && !isVisible) {
+          if (entry.isIntersecting) {
             setIsVisible(true);
             observer.unobserve(entry.target);
           }
         });
       },
       {
-        threshold: 0.5,
-        rootMargin: "0px 0px -100px 0px",
+        threshold: 0.1,
+        rootMargin: "0px",
       },
     );
 
@@ -42,23 +42,25 @@ export default function TextReveal({
         observer.unobserve(ref.current);
       }
     };
-  }, [isVisible]);
+  }, []);
 
   useEffect(() => {
     if (isVisible) {
-      setTimeout(() => {
+      const timeoutId = setTimeout(() => {
         let i = 0;
-        const timer = setInterval(() => {
+        
+        const revealNext = () => {
           if (i < children.length) {
             setDisplayText(children.slice(0, i + 1));
             i++;
-          } else {
-            clearInterval(timer);
+            setTimeout(revealNext, speed);
           }
-        }, speed);
-
-        return () => clearInterval(timer);
+        };
+        
+        revealNext();
       }, delay);
+
+      return () => clearTimeout(timeoutId);
     }
   }, [isVisible, children, delay, speed]);
 

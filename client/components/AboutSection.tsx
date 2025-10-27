@@ -48,31 +48,39 @@ export default function AboutSection() {
   const benefits = [
     {
       number: "01",
-      title: "Data-driven",
+      title: "We focus on the prey",
       description:
-        "Every decision is based on data, not gut feeling.",
+        "We focus on the prey — the buyer. Like a hawk locked on its target, we study your audience from every angle: their fears, emotions, and desires until every piece of content strikes with precision.",
     },
     {
       number: "02",
-      title: "Transparent",
+      title: "Partnership, not promotion",
       description:
-        "Complete transparency about costs, processes and results.",
+        "Our affiliates aren’t just promoters; they're brand partners. We equip them with high-converting scripts, emotional angles, and product positioning that turn every video into a sales asset, not just a post.",
     },
     {
       number: "03",
-      title: "Results-oriented",
+      title: "Experienced minds only",
       description:
-        "Our success is tied to your measurable business results.",
+        "You won’t be handled by interns or assistants. Your brand is guided by experts who’ve built and scaled multiple TikTok Shop brands to five and six figures fast.",
     },
     {
       number: "04",
-      title: "Modern & Agile",
-      description: "We use the latest tools, methods and technologies.",
+      title: "Leadership over labor",
+      description:
+        "With HawkTok, you don’t assign tasks — you receive clarity. We lead, prioritize, and execute what drives measurable results.",
     },
     {
       number: "05",
-      title: "Reliable",
-      description: "Long-term partnerships with real added value.",
+      title: "Content that sells",
+      description:
+        "We don’t just create “pretty videos.” We craft buyer-triggering stories designed to stop the scroll, spark emotion, and drive action.",
+    },
+    {
+      number: "06",
+      title: "Speed with precision",
+      description:
+        "What takes others months, we deliver in days without cutting corners. Focus. Clarity. Results. That’s how a hawk hunts.",
     },
   ];
 
@@ -83,10 +91,16 @@ export default function AboutSection() {
           {/* Left Column */}
           <div>
             <h2 className="font-bold text-5xl md:text-6xl font-heading tracking-tight mb-8" style={{ color: 'var(--dynamic-text-color)' }}>
-              Why Lumus
+              Why HawkTok?
             </h2>
+            <p className="text-lg leading-relaxed mb-2 opacity-70" style={{ color: 'var(--dynamic-text-color)' }}>
+              “We only focus on our prey — and our prey is the buyer.”
+            </p>
+            <p className="text-lg leading-relaxed mb-6 opacity-70" style={{ color: 'var(--dynamic-text-color)' }}>
+              For us, marketing isn’t about chasing trends or luck. It’s a calculated pursuit built on understanding psychology, positioning, and the one thing that matters most: the buyer.
+            </p>
             <p className="text-lg leading-relaxed mb-12 opacity-70" style={{ color: 'var(--dynamic-text-color)' }}>
-              Our way of working is different. We combine creative excellence with analytical precision. The result: Websites that are not only beautiful, but also sell. Campaigns that are not only visible, but bring customers.
+              Because in today’s world, content sells but only when it’s built around the person watching, scrolling, and deciding.
             </p>
             <a
               href="#contact"

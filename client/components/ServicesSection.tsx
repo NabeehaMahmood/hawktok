@@ -1,22 +1,28 @@
 export default function ServicesSection() {
   const services = [
     {
-      title: "Web Design",
-      icon: "🌐",
+      title: "DTC Brands launch",
+      icon: "🚀",
       description:
-        "We design and develop websites that not only look good, but sell purposefully. Fast, intuitive and measurably effective.",
+        "Launch and scale direct-to-consumer brands with end-to-end growth marketing.",
     },
     {
-      title: "SEO & SEA",
-      icon: "📊",
+      title: "Private Label Business",
+      icon: "🏷️",
       description:
-        "From data-driven Google & Meta Ads to long-term SEO strategy: We ensure visibility that not only brings clicks, but customers.",
+        "Build profitable private label products and optimize listings, supply and margins.",
     },
     {
-      title: "Automation",
-      icon: "⚙️",
+      title: "TikTok Shop Affiliate marketing",
+      icon: "🤝",
       description:
-        "We build marketing processes that steer themselves. With AI, systems and tools that save you time and scale your business.",
+        "Leverage TikTok Shop and affiliate creators to drive viral commerce and conversions.",
+    },
+    {
+      title: "E-commerce Marketing Strategy",
+      icon: "📈",
+      description:
+        "Full-funnel e-commerce strategies — customer acquisition, retention and growth.",
     },
   ];
 
@@ -30,14 +36,16 @@ export default function ServicesSection() {
           </h2>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+  {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {services.map((service, index) => (
-            <div key={index} className="group">
-              <div className="text-6xl mb-8">{service.icon}</div>
-              <h3 className="text-white font-bold text-2xl mb-6 font-heading">
-                {service.title}
-              </h3>
+            <div key={index} className="group max-w-[320px] mx-auto">
+              <div className="flex flex-col md:min-h-[150px]">
+                <div className="text-6xl mb-8">{service.icon}</div>
+                <h3 className="text-white font-bold text-2xl mb-6 font-heading">
+                  {service.title}
+                </h3>
+              </div>
               <p className="text-gray-300 leading-relaxed text-base">
                 {service.description}
               </p>

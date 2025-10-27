@@ -73,49 +73,97 @@ export default function HeroSection() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const letters = "LUMUS".split("");
+  const letters = "HAWKTOK".split("");
+  // small per-letter tilt values (degrees) to mimic the previous independent tilts
+  const rotations = letters.map((_, i) => (i % 2 === 0 ? -9 + i : 9 - i));
+  // SVG layout values for per-letter positioning
+  const svgWidth = 800;
+  const svgHeight = 160;
+  const fontSize = 120; // px
+  const advance = 86; // approximate x advance per glyph
+  const startX = svgWidth / 2 - ((letters.length - 1) * advance) / 2;
+  const centerY = svgHeight / 2 + fontSize * 0.08; // nudged for optical centering
 
   return (
     <section
       id="hero"
-      className="relative w-full h-screen overflow-hidden pt-20"
+      className="relative w-full min-h-screen overflow-visible pt-32"
     >
       {/* Background video/canvas */}
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
 
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col items-center justify-center">
+      <div className="relative z-10 min-h-screen flex flex-col items-center justify-center">
+        {/* HAWKTOK Logo Image */}
+        <div className="-mt-24 -mb-10 flex justify-center items-center">
+          <img 
+            src="/HAWKTOK-logo.svg" 
+            alt="HAWKTOK Logo"
+            className="w-56 h-56 md:w-80 md:h-80 object-contain"
+          />
+        </div>
+
         {/* Animated Logo */}
-        <div className="relative mb-8 flex justify-center items-center">
-          {/* Main Logo with dynamic animations */}
-          <div className="flex gap-1">
-            {letters.map((letter, index) => (
-              <span
-                key={index}
-                className="text-white font-bold text-8xl md:text-9xl tracking-tighter leading-none inline-block"
-                style={{
-                  filter: "drop-shadow(0 0 20px rgba(255, 255, 255, 0.1))",
-                  animation: `dynamicBounce 1s cubic-bezier(0.34, 1.56, 0.64, 1) infinite,
-                              spinRotate 1.5s ease-in-out infinite,
-                              glow 1.5s ease-in-out infinite`,
-                  animationDelay: `${index * 0.08}s`,
-                  transformOrigin: "center center",
-                }}
-              >
-                {letter}
-              </span>
-            ))}
-          </div>
+        <div className="relative -mb-4 flex justify-center items-center">
+          {/* SVG-based logo: single gradient across the whole word (userSpaceOnUse),
+              per-letter animated <g><text/></g> so each glyph can move independently */}
+          <svg
+            viewBox={`0 0 ${svgWidth} ${svgHeight}`}
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-auto h-[6rem] md:h-[7.5rem]"
+            role="img"
+            aria-label="HAWKTOK"
+          >
+            <defs>
+              {/* Use userSpaceOnUse so the gradient coordinates span the full SVG width
+                  and different <text> elements sample the same continuous gradient */}
+              <linearGradient id="logoGradient" gradientUnits="userSpaceOnUse" x1="0" x2={String(svgWidth)} y1="0" y2="0">
+                <stop offset="0%" stopColor="#FF0050" />
+                <stop offset="14%" stopColor="#FF1A66" />
+                <stop offset="28%" stopColor="#EE2A7B" />
+                <stop offset="42%" stopColor="#69C9D0" />
+                <stop offset="57%" stopColor="#00F2EA" />
+                <stop offset="71%" stopColor="#00D4FF" />
+                <stop offset="100%" stopColor="#0099FF" />
+              </linearGradient>
+            </defs>
+
+            {/* Render each letter as its own <text> (wrapped in a <g>) so we can animate/transform it
+                while each letter still uses the same gradient defined above. */}
+            {letters.map((letter, i) => {
+              const x = startX + i * advance;
+              const rotateDeg = rotations[i] ?? 0;
+              return (
+                <g key={i} style={{ display: "inline-block" }}>
+                  <text
+                    x={x}
+                    y={centerY}
+                    textAnchor="middle"
+                    dominantBaseline="central"
+                    fontWeight={700}
+                    fontSize={fontSize}
+                    fontFamily="inherit"
+                    fill="url(#logoGradient)"
+                    style={{ pointerEvents: "none" }}
+                  >
+                    {letter}
+                  </text>
+                </g>
+              );
+            })}
+          </svg>
         </div>
 
         {/* Subtitle quote */}
-        <div className="mt-24 max-w-2xl text-center px-6">
+        <div className="mt-12 mb-12 max-w-2xl text-center px-6">
           <TextReveal
             className="text-white text-xl md:text-2xl font-light tracking-wide"
-            delay={2000}
-            speed={30}
+            delay={50}
+            speed={35}
           >
-            After countless websites, campaigns and a lot of ad spend, we know how marketing really works.
+            PEOPLE LOVE INFLUENCE AND WE KNOW HOW MAKE DTC 
+            BRANDS A INFLUENCER ON TIKTOK SHOP 
+            Let's Make $100k in 4 Months
           </TextReveal>
         </div>
 
