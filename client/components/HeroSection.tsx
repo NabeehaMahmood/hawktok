@@ -21,10 +21,33 @@ export default function HeroSection() {
       vy: number;
       size: number;
       opacity: number;
+      color: string;
     }
 
     const particles: Particle[] = [];
-    const particleCount = 100;
+    const particleCount = 150;
+    
+    // Gradient colors from pink to blue
+    const gradientColors = [
+      "#FF0050", // deep pink
+      "#FF0050", // deep pink
+      "#FF1A66", // hot pink
+      "#FF1A66", // hot pink
+      "#FF3366", // bright pink
+      "#FF5588", // medium pink
+      "#EE2A7B", // dark pink
+      "#D91E63", // darker pink
+      "#C2185B", // deep magenta pink
+      "#69C9D0", // light cyan
+      "#50D5D8", // cyan
+      "#00F2EA", // bright cyan
+      "#00E5FF", // aqua
+      "#00D4FF", // bright blue
+      "#00C9FF", // sky blue
+      "#0099FF", // vibrant blue
+      "#0088FF", // deep blue
+      "#0066FF", // royal blue
+    ];
 
     // Create particles
     for (let i = 0; i < particleCount; i++) {
@@ -35,12 +58,12 @@ export default function HeroSection() {
         vy: (Math.random() - 0.5) * 2,
         size: Math.random() * 2 + 1,
         opacity: Math.random() * 0.5 + 0.3,
+        color: gradientColors[Math.floor(Math.random() * gradientColors.length)],
       });
     }
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
 
       particles.forEach((particle) => {
         // Update position
@@ -51,7 +74,8 @@ export default function HeroSection() {
         if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
         if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
 
-        // Draw particle
+        // Draw particle with gradient color
+        ctx.fillStyle = particle.color;
         ctx.globalAlpha = particle.opacity;
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
@@ -74,15 +98,6 @@ export default function HeroSection() {
   }, []);
 
   const letters = "HAWKTOK".split("");
-  // small per-letter tilt values (degrees) to mimic the previous independent tilts
-  const rotations = letters.map((_, i) => (i % 2 === 0 ? -9 + i : 9 - i));
-  // SVG layout values for per-letter positioning
-  const svgWidth = 800;
-  const svgHeight = 160;
-  const fontSize = 120; // px
-  const advance = 86; // approximate x advance per glyph
-  const startX = svgWidth / 2 - ((letters.length - 1) * advance) / 2;
-  const centerY = svgHeight / 2 + fontSize * 0.08; // nudged for optical centering
 
   return (
     <section
@@ -95,67 +110,52 @@ export default function HeroSection() {
       {/* Content */}
       <div className="relative z-10 min-h-screen flex flex-col items-center justify-center">
         {/* HAWKTOK Logo Image */}
-        <div className="-mt-24 -mb-10 flex justify-center items-center">
-          <img 
-            src="/HAWKTOK-logo.svg" 
-            alt="HAWKTOK Logo"
-            className="w-56 h-56 md:w-80 md:h-80 object-contain"
-          />
+        <div className="-mt-48 mb-2 flex justify-center items-center">
+          <div className="relative group">
+            {/* Glow effect behind logo */}
+            <div className="absolute inset-8 bg-white/0 group-hover:bg-white/40 blur-2xl rounded-full transition-all duration-500 ease-out scale-75 group-hover:scale-100" />
+            <img 
+              src="/HAWKTOK-logo.svg" 
+              alt="HAWKTOK Logo"
+              className="relative w-72 h-72 md:w-96 md:h-96 object-contain transition-transform duration-300 group-hover:scale-105"
+            />
+          </div>
         </div>
 
         {/* Animated Logo */}
-        <div className="relative -mb-4 flex justify-center items-center">
-          {/* SVG-based logo: single gradient across the whole word (userSpaceOnUse),
-              per-letter animated <g><text/></g> so each glyph can move independently */}
-          <svg
-            viewBox={`0 0 ${svgWidth} ${svgHeight}`}
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-auto h-[6rem] md:h-[7.5rem]"
-            role="img"
-            aria-label="HAWKTOK"
+        <div className="relative mb-8 flex justify-center items-center group">
+          <h1 
+            className="text-6xl md:text-7xl font-bold tracking-[0.2em] transition-all duration-300"
+            style={{
+              fontFamily: 'Signord, sans-serif',
+            }}
           >
-            <defs>
-              {/* Use userSpaceOnUse so the gradient coordinates span the full SVG width
-                  and different <text> elements sample the same continuous gradient */}
-              <linearGradient id="logoGradient" gradientUnits="userSpaceOnUse" x1="0" x2={String(svgWidth)} y1="0" y2="0">
-                <stop offset="0%" stopColor="#FF0050" />
-                <stop offset="14%" stopColor="#FF1A66" />
-                <stop offset="28%" stopColor="#EE2A7B" />
-                <stop offset="42%" stopColor="#69C9D0" />
-                <stop offset="57%" stopColor="#00F2EA" />
-                <stop offset="71%" stopColor="#00D4FF" />
-                <stop offset="100%" stopColor="#0099FF" />
-              </linearGradient>
-            </defs>
-
-            {/* Render each letter as its own <text> (wrapped in a <g>) so we can animate/transform it
-                while each letter still uses the same gradient defined above. */}
-            {letters.map((letter, i) => {
-              const x = startX + i * advance;
-              const rotateDeg = rotations[i] ?? 0;
-              return (
-                <g key={i} style={{ display: "inline-block" }}>
-                  <text
-                    x={x}
-                    y={centerY}
-                    textAnchor="middle"
-                    dominantBaseline="central"
-                    fontWeight={700}
-                    fontSize={fontSize}
-                    fontFamily="inherit"
-                    fill="url(#logoGradient)"
-                    style={{ pointerEvents: "none" }}
-                  >
-                    {letter}
-                  </text>
-                </g>
-              );
-            })}
-          </svg>
+            {/* White text by default */}
+            <span 
+              className="absolute inset-0 group-hover:opacity-0 transition-opacity duration-300"
+              style={{
+                color: '#FFFFFF',
+              }}
+            >
+              HAWKTOK
+            </span>
+            {/* Gradient text on hover */}
+            <span 
+              className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              style={{
+                background: 'linear-gradient(to right, #FF0050 0%, #FF1A66 14%, #EE2A7B 28%, #69C9D0 42%, #00F2EA 57%, #00D4FF 71%, #0099FF 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}
+            >
+              HAWKTOK
+            </span>
+          </h1>
         </div>
 
         {/* Subtitle quote */}
-        <div className="mt-12 mb-12 max-w-2xl text-center px-6">
+        <div className="mt-16 mb-12 max-w-2xl text-center px-6">
           <TextReveal
             className="text-white text-xl md:text-2xl font-light tracking-wide"
             delay={50}
