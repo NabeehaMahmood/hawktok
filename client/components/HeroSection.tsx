@@ -1,40 +1,49 @@
 import TextReveal from "@/components/TextReveal";
-
+import { Button } from "./ui/button";
 
 export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative w-full min-h-screen overflow-visible pt-32"
+      className="relative w-full min-h-screen overflow-hidden flex items-center justify-center"
     >
-      
-
       {/* Content */}
-      <div className="relative z-10 min-h-screen flex flex-col items-center justify-center">
+      <div className="relative z-10 flex flex-col items-center text-center -mt-18">
         {/* HAWKTOK Logo Image */}
-        <div className="-mt-14 mb-6 flex justify-center items-center">
-          <div className="relative group">
-            {/* Glow effect behind logo */}
-            <div className="absolute inset-8 bg-white/0 group-hover:bg-white/40 blur-2xl rounded-full transition-all duration-500 ease-out scale-75 group-hover:scale-100" />
+        <div className="mb-4">
+          <div className="relative group w-96 h-96 md:w-90 md:h-90 mx-auto">
             <img
               src="/HAWKTOK-logo.svg"
               alt="HAWKTOK Logo"
-              className="relative w-96 h-96 md:w-[32rem] md:h-[32rem] object-contain transition-transform duration-300 group-hover:scale-105"
+              className="relative w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
             />
           </div>
         </div>
 
-        {/* Subtitle quote */}
-        <div className="mt-0 mb-12 max-w-2xl text-center px-6">
-          <TextReveal
-            className="text-white text-xl md:text-2xl font-light tracking-wide"
-            delay={50}
-            speed={35}
-          >
-            PEOPLE LOVE INFLUENCE AND WE KNOW HOW MAKE DTC BRANDS A INFLUENCER ON
-            TIKTOK SHOP Let's Make $100k in 4 Months
-          </TextReveal>
-        </div>
+        {/* Title */}
+        <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tighter mb-4">
+            WE TURN DTC BRANDS
+          <br />
+            INTO INFLUENCERS.
+  
+        </h1>
+
+        {/* Subtitle */}
+        <p className="text-lg md:text-xl text-gray-300 max-w-md mx-auto mb-8">
+          And make them generate $100k in 4 months.
+        </p>
+
+        {/* CTA Button */}
+        <Button
+          size="lg"
+          className="text-white font-bold text-lg py-3 px-8 rounded-full hover:scale-105 transition-transform duration-300"
+          style={{
+            background:
+              "linear-gradient(to right, #FF0050 0%, #FF1A66 14%, #EE2A7B 28%, #69C9D0 42%, #00F2EA 57%, #00D4FF 71%, #0099FF 100%)",
+          }}
+        >
+          Let's Build Your Brand
+        </Button>
       </div>
     </section>
   );

@@ -16,8 +16,8 @@ export default function Header({ transparent = true }: HeaderProps) {
   const navItems = [
     { label: "SERVICES", href: "#services", id: "services" },
     { label: "HAWKTOK", href: "#about", id: "about" },
-    { label: "BRANDS", href: "#references", id: "references" },
-    { label: "FOUNDER", href: "#team", id: "team" },
+    { label: "BRANDS", href: "#brands", id: "brands" },
+    { label: "FOUNDER", href: "#founder", id: "founder" },
     { label: "CONTACT", href: "#contact", id: "contact" },
   ];
 

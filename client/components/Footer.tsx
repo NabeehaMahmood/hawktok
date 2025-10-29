@@ -3,8 +3,8 @@
 export default function Footer() {
   const navItems = [
     { label: "SERVICES", href: "#services" },
-    { label: "LUMUS", href: "#about" },
-    { label: "REFERENCES", href: "#references" },
+    { label: "HAWKTOK", href: "#about" },
+    { label: "BRANDS", href: "#brands" },
     { label: "TEAM", href: "#team" },
     { label: "CONTACT", href: "#contact" },
   ];
@@ -20,7 +20,7 @@ export default function Footer() {
               key={i}
               className="inline-block text-white text-2xl font-bold tracking-widest mr-16"
             >
-              LIEFERN STATT LABERN • LIEFERN STATT LABERN • LIEFERN STATT LABERN
+              The $100M Flight Has Begun    •    The $100M Flight Has Begun    •    The $100M Flight Has Begun    •    The $100M Flight Has Begun    •
             </span>
           ))}
         </div>
@@ -35,10 +35,10 @@ export default function Footer() {
               Contact us:
             </h3>
             <a
-              href="mailto:info@lumus.de"
+              href="mailto:Info@hawktok.com"
               className="text-gray-400 hover:text-white transition-colors"
             >
-              info@lumus.de
+              Info@hawktok.com
             </a>
           </div>
 
@@ -83,7 +83,7 @@ export default function Footer() {
         {/* Bottom Footer */}
         <div className="border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-600 text-sm">
-            © LUMUS DIGITAL. All rights reserved.
+            © HAWKTOK. All rights reserved.
           </p>
           <div className="flex gap-6 text-gray-600 text-sm mt-4 md:mt-0">
             <a

@@ -15,7 +15,7 @@
 
 @layer base {
   /**
-   * Tailwind CSS theme - Lumus Digital color scheme
+   * Tailwind CSS theme - HawkTok color scheme
    * Colors expressed as HSL values
    */
   body {
@@ -397,14 +397,14 @@ body { transition: background-color 1s cubic-bezier(.25,.46,.45,.94); }
 }
 
 /* Make sections transparent to show the smooth background */
-#services, #about, #references, #showcase, #team, #contact {
+#services, #about, #brands, #showcase, #team, #contact {
   background: transparent !important;
 }
 
 /* Override hardcoded text colors for smooth transitions */
 #services h2, #services h3, #services p, #services span,
 #about h2, #about h3, #about p, #about span,
-#references h2, #references h3, #references p, #references span,
+#brands h2, #brands h3, #brands p, #brands span,
 #showcase h2, #showcase h3, #showcase p, #showcase span,
 #team h2, #team h3, #team p, #team span,
 #contact h2, #contact h3, #contact p, #contact span {
@@ -415,7 +415,7 @@ body { transition: background-color 1s cubic-bezier(.25,.46,.45,.94); }
 /* Handle links and buttons */
 #services a:not(.text-black):not(.bg-white), 
 #about a:not(.text-black):not(.bg-white), 
-#references a:not(.text-black):not(.bg-white), 
+#brands a:not(.text-black):not(.bg-white), 
 #showcase a:not(.text-black):not(.bg-white), 
 #team a:not(.text-black):not(.bg-white), 
 #contact a:not(.text-black):not(.bg-white) {

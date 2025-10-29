@@ -1,6 +1,10 @@
 import { useEffect, useRef } from "react";
 
-export default function AnimatedDottedBackground() {
+interface AnimatedDottedBackgroundProps {
+  particleCount?: number;
+}
+
+export default function AnimatedDottedBackground({ particleCount = 1000 }: AnimatedDottedBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -24,7 +28,6 @@ export default function AnimatedDottedBackground() {
     }
 
     const particles: Particle[] = [];
-        const particleCount = 1000;
 
     // Gradient colors from pink to blue
     const gradientColors = [

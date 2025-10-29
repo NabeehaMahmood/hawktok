@@ -92,30 +92,25 @@ export default function ContactSection() {
                 <div>
                   <p className="text-gray-500 text-sm mb-1">Email</p>
                   <a
-                    href="mailto:info@lumus.de"
+                    href="mailto:Info@hawktok.com"
                     className="text-white hover:text-gray-300 transition-colors font-medium"
                   >
-                    info@lumus.de
+                    Info@hawktok.com
                   </a>
                 </div>
                 <div>
                   <p className="text-gray-500 text-sm mb-1">Phone</p>
                   <a
-                    href="tel:+49157361482485"
+                    href="tel:+16194168885"
                     className="text-white hover:text-gray-300 transition-colors font-medium"
                   >
-                    +49 157 361 482 85
+                    +1 (619) 4168885
                   </a>
                 </div>
               </div>
             </div>
 
-            <div className="pt-8 border-t border-gray-800">
-              <p className="text-gray-400 text-sm">
-                We are your partner for performance marketing, web design and
-                digital transformation.
-              </p>
-            </div>
+  
           </div>
         </div>
       </div>

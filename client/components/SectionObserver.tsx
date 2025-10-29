@@ -13,7 +13,7 @@ export default function SectionObserver() {
       hero: "#000000",
       services: "#0f1419", // Very dark blue-gray, much more subtle
       about: "#000000",
-      references: "#0f1419", // Subtle color for references
+      brands: "#0f1419", // Subtle color for brands
       showcase: "#000000",
       team: "#000000",
       contact: "#000000",

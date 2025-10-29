@@ -1,29 +1,32 @@
+// Dummy brand data with actual brand names
+const brands = [
+  "NIKE", "APPLE", "AMAZON", "GOOGLE", "MICROSOFT", "TESLA", 
+  "SAMSUNG", "COCA-COLA", "DISNEY", "MCDONALDS", "VISA", "MASTERCARD"
+];
 
-
-export default function ReferencesSection() {
+export default function BrandsSection() {
   return (
     <section
-      id="references"
+      id="brands"
       className="relative py-32 px-6 scroll-mt-20 transition-all duration-1000 ease-out bg-black"
     >
-      
       <div className="container mx-auto relative z-10">
         {/* Section Title */}
-        <div className="text-center mb-24">
+        <div className="text-center mb-16">
           <div className="flex justify-center">
             <svg
-              viewBox="0 0 600 100"
+              viewBox="0 0 400 100"
               xmlns="http://www.w3.org/2000/svg"
               className="w-auto h-[4rem] md:h-[5rem]"
               role="img"
-              aria-label="References"
+              aria-label="Brands"
             >
               <defs>
                 <linearGradient
-                  id="referencesGradient"
+                  id="brandsGradient"
                   gradientUnits="userSpaceOnUse"
                   x1="0"
-                  x2="600"
+                  x2="400"
                   y1="0"
                   y2="0"
                 >
@@ -37,21 +40,25 @@ export default function ReferencesSection() {
                 </linearGradient>
               </defs>
               <text
-                x="300"
+                x="200"
                 y="60"
                 textAnchor="middle"
                 dominantBaseline="central"
                 fontWeight={700}
                 fontSize={80}
                 fontFamily="inherit"
-                fill="url(#referencesGradient)"
+                fill="url(#brandsGradient)"
                 className="font-heading"
               >
-                References
+                Brands
               </text>
             </svg>
           </div>
+          <p className="text-gray-300 text-xl mt-6 max-w-3xl mx-auto">
+            We don't chase trends — we hunt dominance.
+          </p>
         </div>
+
 
         {/* Gradient Border Style */}
         <style>{`
@@ -69,7 +76,7 @@ export default function ReferencesSection() {
         `}</style>
 
         {/* Two Column Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto mb-16">
           {/* Column 1 */}
           <div className="gradient-border">
             <div className="gradient-border-inner text-center md:text-left">
@@ -122,6 +129,24 @@ export default function ReferencesSection() {
                 you launch with precision and scale with confidence.
               </p>
             </div>
+          </div>
+        </div>
+
+        {/* Simple Brand Ticker - Like Footer */}
+        <div className="relative overflow-hidden bg-black py-8 border-t border-gray-900">
+          <div className="whitespace-nowrap animate-scroll-left inline-block">
+            {Array.from({ length: 3 }).map((_, i) => (
+              <span
+                key={i}
+                className="inline-block text-white text-2xl font-bold tracking-widest mr-16"
+              >
+                {brands.map((brand, index) => (
+                  <span key={index} className="mr-16">
+                    {brand} •
+                  </span>
+                ))}
+              </span>
+            ))}
           </div>
         </div>
       </div>

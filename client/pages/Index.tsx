@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
 import AboutSection from "@/components/AboutSection";
-import ReferencesSection from "@/components/ReferencesSection";
+import BrandsSection from "@/components/BrandsSection";
 import ShowcaseSection from "@/components/ShowcaseSection";
 import TeamSection from "@/components/TeamSection";
 import ContactSection from "@/components/ContactSection";
@@ -32,7 +32,7 @@ export default function Index() {
         <HeroSection />
         <ServicesSection />
         <AboutSection />
-        <ReferencesSection />
+        <BrandsSection />
         <ShowcaseSection />
         <TeamSection />
         <ContactSection />

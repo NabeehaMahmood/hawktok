@@ -3,24 +3,49 @@
 export default function ServicesSection() {
   const services = [
     {
-      title: "DTC Brands launch",
-      description:
-        "Launch and scale direct-to-consumer brands with end-to-end growth marketing.",
+      title: (
+        <>
+          DTC Brand<br />
+          Launch
+        </>
+      ),
+      description: "Launch and scale direct-to-consumer brands with full-stack growth systems.",
+      gradientStyle: {
+        background: "linear-gradient(to right, #22d3ee, #5eead4)",
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent",
+        backgroundClip: "text"
+      }
     },
     {
-      title: "Private Label Business",
-      description:
-        "Build profitable private label products and optimize listings, supply and margins.",
+      title: "Private Label Acceleration", 
+      description: "Build profitable private-label products through optimization, supply mastery, and brand identity.",
+      gradientStyle: {
+        background: "linear-gradient(to right, #a855f7, #f472b6)",
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent",
+        backgroundClip: "text"
+      }
     },
     {
-      title: "TikTok Shop Affiliate marketing",
-      description:
-        "Leverage TikTok Shop and affiliate creators to drive viral commerce and conversions.",
+      title: "TikTok Shop Affiliate Ecosystem",
+      description: "Turn creators into your sales engine using viral influence and performance-driven structures.",
+      gradientStyle: {
+        background: "linear-gradient(to right, #22d3ee, #3b82f6)",
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent",
+        backgroundClip: "text"
+      }
     },
     {
-      title: "E-commerce Marketing Strategy",
-      description:
-        "Full-funnel e-commerce strategies — customer acquisition, retention and growth.",
+      title: "E-commerce Strategy & Retention",
+      description: "Architect full-funnel strategies for acquisition, retention, and lifetime value growth",
+      gradientStyle: {
+        background: "linear-gradient(to right, #f472b6, #ef4444)",
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent",
+        backgroundClip: "text"
+      }
     },
   ];
 
@@ -31,16 +56,18 @@ export default function ServicesSection() {
     >
       
       <style>{`
-        .gradient-border {
-          background: linear-gradient(135deg, #FF0050 0%, #FF1A66 14%, #EE2A7B 28%, #69C9D0 42%, #00F2EA 57%, #00D4FF 71%, #0099FF 100%);
-          padding: 3px;
-          border-radius: 8px;
-        }
-        .gradient-border > div {
-          background: black;
-          border-radius: 6px;
+        .service-card {
+          background: transparent;
           padding: 24px;
           height: 100%;
+        }
+        
+        .gradient-text {
+          background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          color: transparent;
         }
       `}</style>
       <div className="container mx-auto relative z-10">
@@ -63,13 +90,11 @@ export default function ServicesSection() {
                   y1="0"
                   y2="0"
                 >
-                  <stop offset="0%" stopColor="#FF0050" />
-                  <stop offset="14%" stopColor="#FF1A66" />
-                  <stop offset="28%" stopColor="#EE2A7B" />
-                  <stop offset="42%" stopColor="#69C9D0" />
-                  <stop offset="57%" stopColor="#00F2EA" />
-                  <stop offset="71%" stopColor="#00D4FF" />
-                  <stop offset="100%" stopColor="#0099FF" />
+                  <stop offset="0%" stopColor="#00F2EA" />
+                  <stop offset="25%" stopColor="#00D4FF" />
+                  <stop offset="50%" stopColor="#8B5CF6" />
+                  <stop offset="75%" stopColor="#EC4899" />
+                  <stop offset="100%" stopColor="#EF4444" />
                 </linearGradient>
               </defs>
               <text
@@ -87,19 +112,24 @@ export default function ServicesSection() {
               </text>
             </svg>
           </div>
+          <p className="text-gray-300 text-lg mt-6 max-w-2xl mx-auto">
+            From foundations to full-scale dominance—<br />
+            here's how we help brands soar.
+          </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-2xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-5xl mx-auto">
           {services.map((service, index) => (
-            <div key={index} className="group gradient-border">
-              <div>
-                <div className="flex flex-col">
-                  <h3 className="gradient-heading font-bold text-2xl mb-2 font-heading">
-                    {service.title}
-                  </h3>
-                </div>
-                <p className="text-gray-300 leading-relaxed text-base">
+            <div key={index} className="group">
+              <div className="service-card">
+                <h3 
+                  className="font-bold text-3xl md:text-4xl mb-4 font-heading leading-tight"
+                  style={service.gradientStyle}
+                >
+                  {service.title}
+                </h3>
+                <p className="text-gray-300 leading-relaxed text-lg">
                   {service.description}
                 </p>
               </div>
