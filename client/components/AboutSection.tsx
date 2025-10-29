@@ -1,5 +1,6 @@
 import { useRef, useEffect } from "react";
 
+
 export default function AboutSection() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
@@ -85,7 +86,12 @@ export default function AboutSection() {
   ];
 
   return (
-    <section ref={sectionRef} id="about" className="min-h-screen py-32 px-6 scroll-mt-20 transition-all duration-1000 ease-out flex items-center">
+    <section
+      ref={sectionRef}
+      id="about"
+      className="relative min-h-screen py-32 px-6 scroll-mt-20 transition-all duration-1000 ease-out flex items-center bg-black"
+    >
+      
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-start">
           {/* Left Column */}

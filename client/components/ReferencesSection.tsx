@@ -1,7 +1,13 @@
+
+
 export default function ReferencesSection() {
   return (
-    <section id="references" className="py-32 px-6 scroll-mt-20 transition-all duration-1000 ease-out">
-      <div className="container mx-auto">
+    <section
+      id="references"
+      className="relative py-32 px-6 scroll-mt-20 transition-all duration-1000 ease-out bg-black"
+    >
+      
+      <div className="container mx-auto relative z-10">
         {/* Section Title */}
         <div className="text-center mb-24">
           <div className="flex justify-center">
@@ -13,7 +19,14 @@ export default function ReferencesSection() {
               aria-label="References"
             >
               <defs>
-                <linearGradient id="referencesGradient" gradientUnits="userSpaceOnUse" x1="0" x2="600" y1="0" y2="0">
+                <linearGradient
+                  id="referencesGradient"
+                  gradientUnits="userSpaceOnUse"
+                  x1="0"
+                  x2="600"
+                  y1="0"
+                  y2="0"
+                >
                   <stop offset="0%" stopColor="#FF0050" />
                   <stop offset="14%" stopColor="#FF1A66" />
                   <stop offset="28%" stopColor="#EE2A7B" />
@@ -48,7 +61,7 @@ export default function ReferencesSection() {
             border-radius: 12px;
           }
           .gradient-border-inner {
-            background: #FFFFFF;
+            background: #000000;
             border-radius: 10px;
             padding: 32px;
             height: 100%;
@@ -60,24 +73,26 @@ export default function ReferencesSection() {
           {/* Column 1 */}
           <div className="gradient-border">
             <div className="gradient-border-inner text-center md:text-left">
-              <h3 
+              <h3
                 className="text-3xl md:text-4xl font-bold mb-6"
                 style={{
-                  background: 'linear-gradient(90deg, #FF0050 0%, #FF1A66 25%, #EE2A7B 50%, #FF1A66 75%, #FF0050 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
+                  background:
+                    "linear-gradient(90deg, #FF0050 0%, #FF1A66 25%, #EE2A7B 50%, #FF1A66 75%, #FF0050 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
                 }}
               >
                 How We Hunt for DTC Brands
               </h3>
-              <p className="text-black text-lg leading-relaxed">
-                At HawkTok, we don't chase trends — we hunt for opportunities. We help 
-                DTC brands lock onto their target market with precision, crafting offers, 
-                content, and positioning that strike exactly where the buyer feels it. From 
-                storytelling and creative strategy to affiliate scaling and paid growth, every 
-                move is calculated, every decision intentional. The result? Brands that don't 
-                just sell — they dominate their category.
+              <p className="text-white text-lg leading-relaxed">
+                At HawkTok, we don't chase trends — we hunt for opportunities.
+                We help DTC brands lock onto their target market with precision,
+                crafting offers, content, and positioning that strike exactly
+                where the buyer feels it. From storytelling and creative
+                strategy to affiliate scaling and paid growth, every move is
+                calculated, every decision intentional. The result? Brands that
+                don't just sell — they dominate their category.
               </p>
             </div>
           </div>
@@ -85,24 +100,26 @@ export default function ReferencesSection() {
           {/* Column 2 */}
           <div className="gradient-border">
             <div className="gradient-border-inner text-center md:text-left">
-              <h3 
+              <h3
                 className="text-3xl md:text-4xl font-bold mb-6"
                 style={{
-                  background: 'linear-gradient(90deg, #FF0050 0%, #FF1A66 25%, #EE2A7B 50%, #FF1A66 75%, #FF0050 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
+                  background:
+                    "linear-gradient(90deg, #FF0050 0%, #FF1A66 25%, #EE2A7B 50%, #FF1A66 75%, #FF0050 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
                 }}
               >
                 How We Elevate Individual Sellers
               </h3>
-              <p className="text-black text-lg leading-relaxed">
-                We help individual sellers think and move like hawks — focused, fast, and 
-                fearless. Starting from product validation and niche positioning to TikTok 
-                content and affiliate growth, we shape sellers into brand leaders. Our 
-                system turns impulse-driven shoppers into loyal customers by blending 
-                emotion, psychology, and sharp marketing instincts. You don't just list 
-                products — you launch with precision and scale with confidence.
+              <p className="text-white text-lg leading-relaxed">
+                We help individual sellers think and move like hawks — focused,
+                fast, and fearless. Starting from product validation and niche
+                positioning to TikTok content and affiliate growth, we shape
+                sellers into brand leaders. Our system turns impulse-driven
+                shoppers into loyal customers by blending emotion, psychology,
+                and sharp marketing instincts. You don't just list products —
+                you launch with precision and scale with confidence.
               </p>
             </div>
           </div>

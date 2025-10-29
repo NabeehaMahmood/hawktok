@@ -1,3 +1,5 @@
+
+
 export default function ServicesSection() {
   const services = [
     {
@@ -23,7 +25,11 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section id="services" className="py-32 px-6 scroll-mt-20 transition-all duration-1000 ease-out">
+    <section
+      id="services"
+      className="relative py-32 px-6 scroll-mt-20 transition-all duration-1000 ease-out bg-black"
+    >
+      
       <style>{`
         .gradient-border {
           background: linear-gradient(135deg, #FF0050 0%, #FF1A66 14%, #EE2A7B 28%, #69C9D0 42%, #00F2EA 57%, #00D4FF 71%, #0099FF 100%);
@@ -31,13 +37,13 @@ export default function ServicesSection() {
           border-radius: 8px;
         }
         .gradient-border > div {
-          background: white;
+          background: black;
           border-radius: 6px;
           padding: 24px;
           height: 100%;
         }
       `}</style>
-      <div className="container mx-auto">
+      <div className="container mx-auto relative z-10">
         {/* Section Title */}
         <div className="text-center mb-20">
           <div className="flex justify-center">
@@ -49,7 +55,14 @@ export default function ServicesSection() {
               aria-label="Services"
             >
               <defs>
-                <linearGradient id="servicesGradient" gradientUnits="userSpaceOnUse" x1="0" x2="500" y1="0" y2="0">
+                <linearGradient
+                  id="servicesGradient"
+                  gradientUnits="userSpaceOnUse"
+                  x1="0"
+                  x2="500"
+                  y1="0"
+                  y2="0"
+                >
                   <stop offset="0%" stopColor="#FF0050" />
                   <stop offset="14%" stopColor="#FF1A66" />
                   <stop offset="28%" stopColor="#EE2A7B" />
@@ -76,7 +89,7 @@ export default function ServicesSection() {
           </div>
         </div>
 
-  {/* Services Grid */}
+        {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-2xl mx-auto">
           {services.map((service, index) => (
             <div key={index} className="group gradient-border">

@@ -1,3 +1,5 @@
+
+
 export default function Footer() {
   const navItems = [
     { label: "SERVICES", href: "#services" },
@@ -8,9 +10,10 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-black border-t border-gray-900">
+    <footer className="relative bg-black border-t border-gray-900">
+      
       {/* Ticker */}
-      <div className="overflow-hidden bg-black py-8 border-b border-gray-900">
+      <div className="relative z-10 overflow-hidden bg-black py-8 border-b border-gray-900">
         <div className="whitespace-nowrap animate-scroll-left inline-block">
           {Array.from({ length: 3 }).map((_, i) => (
             <span
@@ -24,7 +27,7 @@ export default function Footer() {
       </div>
 
       {/* Main Footer Content */}
-      <div className="container mx-auto px-6 py-16">
+      <div className="relative z-10 container mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Contact */}
           <div>

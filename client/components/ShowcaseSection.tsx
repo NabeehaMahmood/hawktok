@@ -1,3 +1,5 @@
+
+
 export default function ShowcaseSection() {
   const showcases = [
     {
@@ -13,8 +15,12 @@ export default function ShowcaseSection() {
   ];
 
   return (
-    <section id="showcase" className="py-32 px-6 scroll-mt-20 transition-all duration-1000 ease-out">
-      <div className="container mx-auto">
+    <section
+      id="showcase"
+      className="relative py-32 px-6 scroll-mt-20 transition-all duration-1000 ease-out bg-black"
+    >
+      
+      <div className="container mx-auto relative z-10">
         {/* Section Title */}
         <div className="text-center mb-24">
           <div className="flex justify-center">
@@ -26,7 +32,14 @@ export default function ShowcaseSection() {
               aria-label="Showcases"
             >
               <defs>
-                <linearGradient id="showcasesGradient" gradientUnits="userSpaceOnUse" x1="0" x2="600" y1="0" y2="0">
+                <linearGradient
+                  id="showcasesGradient"
+                  gradientUnits="userSpaceOnUse"
+                  x1="0"
+                  x2="600"
+                  y1="0"
+                  y2="0"
+                >
                   <stop offset="0%" stopColor="#FF0050" />
                   <stop offset="14%" stopColor="#FF1A66" />
                   <stop offset="28%" stopColor="#EE2A7B" />

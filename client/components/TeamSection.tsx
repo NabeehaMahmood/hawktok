@@ -1,3 +1,5 @@
+
+
 export default function TeamSection() {
   const team = [
     {
@@ -18,8 +20,12 @@ export default function TeamSection() {
   ];
 
   return (
-    <section id="team" className="py-32 px-6 scroll-mt-20 transition-all duration-1000 ease-out">
-      <div className="container mx-auto">
+    <section
+      id="team"
+      className="relative py-32 px-6 scroll-mt-20 transition-all duration-1000 ease-out bg-black"
+    >
+      
+      <div className="container mx-auto relative z-10">
         {/* Section Title */}
         <div className="text-center mb-24">
           <div className="flex justify-center mb-6">
@@ -31,7 +37,14 @@ export default function TeamSection() {
               aria-label="Team"
             >
               <defs>
-                <linearGradient id="teamGradient" gradientUnits="userSpaceOnUse" x1="0" x2="300" y1="0" y2="0">
+                <linearGradient
+                  id="teamGradient"
+                  gradientUnits="userSpaceOnUse"
+                  x1="0"
+                  x2="300"
+                  y1="0"
+                  y2="0"
+                >
                   <stop offset="0%" stopColor="#FF0050" />
                   <stop offset="14%" stopColor="#FF1A66" />
                   <stop offset="28%" stopColor="#EE2A7B" />
@@ -57,7 +70,8 @@ export default function TeamSection() {
             </svg>
           </div>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Our experienced team brings together expertise from performance marketing, web development and AI.
+            Our experienced team brings together expertise from performance
+            marketing, web development and AI.
           </p>
         </div>
 

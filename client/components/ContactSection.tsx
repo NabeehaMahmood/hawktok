@@ -1,7 +1,13 @@
+
+
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-32 px-6 scroll-mt-20 transition-all duration-1000 ease-out">
-      <div className="container mx-auto">
+    <section
+      id="contact"
+      className="relative py-32 px-6 scroll-mt-20 transition-all duration-1000 ease-out bg-black"
+    >
+      
+      <div className="container mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
           {/* Left Column */}
           <div>
@@ -14,7 +20,14 @@ export default function ContactSection() {
                 aria-label="Let's talk."
               >
                 <defs>
-                  <linearGradient id="contactGradient" gradientUnits="userSpaceOnUse" x1="0" x2="550" y1="0" y2="0">
+                  <linearGradient
+                    id="contactGradient"
+                    gradientUnits="userSpaceOnUse"
+                    x1="0"
+                    x2="550"
+                    y1="0"
+                    y2="0"
+                  >
                     <stop offset="0%" stopColor="#FF0050" />
                     <stop offset="14%" stopColor="#FF1A66" />
                     <stop offset="28%" stopColor="#EE2A7B" />
@@ -40,16 +53,19 @@ export default function ContactSection() {
               </svg>
             </div>
             <p className="text-gray-400 text-lg leading-relaxed mb-12">
-              We're looking forward to hearing from you. Whether you want to optimize an existing project or start from scratch - let's achieve your goals together.
+              We're looking forward to hearing from you. Whether you want to
+              optimize an existing project or start from scratch - let's achieve
+              your goals together.
             </p>
             <a
               href="#contact"
               className="inline-block px-8 py-4 font-bold rounded-lg transition-all duration-300 hover:opacity-90"
               style={{
-                background: 'linear-gradient(90deg, #FF0050, #FF1A66, #EE2A7B, #69C9D0, #00F2EA, #00D4FF, #0099FF, #FF0050, #FF1A66, #EE2A7B, #69C9D0, #00F2EA, #00D4FF, #0099FF)',
-                backgroundSize: '400% 100%',
-                animation: 'gradientMove 8s linear infinite',
-                color: 'white',
+                background:
+                  "linear-gradient(90deg, #FF0050, #FF1A66, #EE2A7B, #69C9D0, #00F2EA, #00D4FF, #0099FF, #FF0050, #FF1A66, #EE2A7B, #69C9D0, #00F2EA, #00D4FF, #0099FF)",
+                backgroundSize: "400% 100%",
+                animation: "gradientMove 8s linear infinite",
+                color: "white",
               }}
             >
               Schedule consultation
@@ -96,7 +112,8 @@ export default function ContactSection() {
 
             <div className="pt-8 border-t border-gray-800">
               <p className="text-gray-400 text-sm">
-                We are your partner for performance marketing, web design and digital transformation.
+                We are your partner for performance marketing, web design and
+                digital transformation.
               </p>
             </div>
           </div>
