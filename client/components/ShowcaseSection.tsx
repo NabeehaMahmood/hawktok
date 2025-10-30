@@ -67,8 +67,10 @@ export default function ShowcaseSection() {
                 textAnchor="middle"
                 dominantBaseline="middle"
                 fill="url(#showcaseGradient)"
-                style={{ fontFamily: 'Montserrat, system-ui, -apple-system, "Segoe UI", sans-serif', fontWeight: 800 }}
-                fontSize="120"
+                fontFamily="'Signord', sans-serif"
+                fontWeight={700}
+                fontSize={120}
+                className="font-signord"
               >
                 Showcases
               </text>

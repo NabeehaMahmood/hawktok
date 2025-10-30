@@ -1,18 +1,18 @@
 import AnimatedDottedBackground from "./AnimatedDottedBackground";
 
-export default function TeamSection() {
+export default function FounderSection() {
   return (
     <section
       id="founder"
-      className="relative py-32 px-6 scroll-mt-20 transition-all duration-1000 ease-out bg-black"
+  className="relative py-0 px-6 scroll-mt-20 transition-all duration-1000 ease-out bg-black"
     >
       <AnimatedDottedBackground particleCount={150} />
       <div className="container mx-auto relative z-10">
         {/* Section Title */}
-        <div className="text-center mb-24">
+  <div className="text-center mb-0">
           <div className="flex justify-center mb-6">
             <svg
-              viewBox="0 0 400 100"
+              viewBox="0 0 900 120"
               xmlns="http://www.w3.org/2000/svg"
               className="w-auto h-[4rem] md:h-[5rem]"
               role="img"
@@ -23,7 +23,7 @@ export default function TeamSection() {
                   id="founderGradient"
                   gradientUnits="userSpaceOnUse"
                   x1="0"
-                  x2="400"
+                  x2="900"
                   y1="0"
                   y2="0"
                 >
@@ -37,15 +37,15 @@ export default function TeamSection() {
                 </linearGradient>
               </defs>
               <text
-                x="200"
-                y="60"
+                x="450"
+                y="80"
                 textAnchor="middle"
                 dominantBaseline="central"
                 fontWeight={700}
                 fontSize={80}
-                fontFamily="inherit"
+                fontFamily="'Signord', sans-serif"
                 fill="url(#founderGradient)"
-                className="font-heading"
+                className="font-heading font-signord"
               >
                 Founder
               </text>

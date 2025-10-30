@@ -13,7 +13,7 @@ export default function ContactSection() {
           <div>
             <div className="mb-8">
               <svg
-                viewBox="0 0 550 100"
+                viewBox="0 0 900 120"
                 xmlns="http://www.w3.org/2000/svg"
                 className="w-auto h-[3.5rem] md:h-[4.5rem]"
                 role="img"
@@ -38,15 +38,15 @@ export default function ContactSection() {
                   </linearGradient>
                 </defs>
                 <text
-                  x="0"
-                  y="60"
+                  x="40"
+                  y="80"
                   textAnchor="start"
                   dominantBaseline="central"
                   fontWeight={700}
                   fontSize={80}
-                  fontFamily="inherit"
+                  fontFamily="'Signord', sans-serif"
                   fill="url(#contactGradient)"
-                  className="font-heading"
+                  className="font-heading font-signord"
                 >
                   Let's talk.
                 </text>

@@ -89,16 +89,16 @@ export default function AboutSection() {
     <section
       ref={sectionRef}
       id="about"
-      className="relative min-h-screen py-32 px-6 scroll-mt-20 transition-all duration-1000 ease-out flex items-center bg-black"
+  className="relative min-h-screen py-0 px-6 scroll-mt-20 transition-all duration-1000 ease-out flex items-center bg-black"
     >
       
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-start">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start mt-0 mb-0">
           {/* Left Column */}
           <div>
             <div className="mb-8">
               <svg
-                viewBox="0 0 700 100"
+                viewBox="0 0 1200 160"
                 xmlns="http://www.w3.org/2000/svg"
                 className="w-auto h-[3.5rem] md:h-[4.5rem]"
                 role="img"
@@ -116,15 +116,15 @@ export default function AboutSection() {
                   </linearGradient>
                 </defs>
                 <text
-                  x="0"
-                  y="60"
-                  textAnchor="start"
+                  x="600"
+                  y="110"
+                  textAnchor="middle"
                   dominantBaseline="central"
                   fontWeight={700}
                   fontSize={80}
-                  fontFamily="inherit"
+                  fontFamily="'Signord', sans-serif"
                   fill="url(#aboutGradient)"
-                  className="font-heading"
+                  className="font-heading font-signord"
                 >
                   Why HawkTok?
                 </text>

@@ -1,101 +1,42 @@
 export default function Footer() {
-  const navItems = [
-    { label: "SERVICES", href: "#services" },
-    { label: "HAWKTOK", href: "#about" },
-    { label: "BRANDS", href: "#brands" },
-    { label: "TEAM", href: "#team" },
-    { label: "CONTACT", href: "#contact" },
-  ];
-
   return (
-    <footer className="relative bg-black border-t border-gray-900">
-      
-      {/* Ticker */}
-      <div className="relative z-10 overflow-hidden bg-black py-[0.25in] border-b border-gray-900">
-        <div className="whitespace-nowrap animate-scroll-left inline-block">
-          {Array.from({ length: 100 }).map((_, i) => (
-            <span
-              key={i}
-              className="inline-block text-white text-[1in] font-bold tracking-widest mr-16"
-              style={{ fontFamily: 'Race Sport, sans-serif' }}
-            >
-              The $100M Flight Has Begun    •    The $100M Flight Has Begun    •    The $100M Flight Has Begun    •    The $100M Flight Has Begun    •
-            </span>
-          ))}
+    <footer className="relative bg-black border-t border-gray-900 py-8">
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-6">
+        {/* Logo - links to top */}
+        <a
+          href="#top"
+          className="mb-4 md:mb-0 flex items-center group whitespace-nowrap"
+          onMouseEnter={e => {
+            const text = e.currentTarget.querySelector('.hawktok-footer-text') as HTMLElement | null;
+            if (text) {
+              text.style.background = 'linear-gradient(to right, #FF0050 0%, #FF1A66 14%, #EE2A7B 28%, #69C9D0 42%, #00F2EA 57%, #00D4FF 71%, #0099FF 100%)';
+              (text.style as any).webkitBackgroundClip = 'text';
+              text.style.backgroundClip = 'text';
+              text.style.color = 'transparent';
+            }
+          }}
+          onMouseLeave={e => {
+            const text = e.currentTarget.querySelector('.hawktok-footer-text') as HTMLElement | null;
+            if (text) {
+              text.style.background = '';
+              text.style.color = '';
+            }
+          }}
+        >
+          <img src="/HAWKTOK-logo.svg" alt="HAWKTOK Logo" className="h-12 w-auto" />
+          <span
+            className="hawktok-footer-text ml-3 text-2xl font-bold text-white transition bg-clip-text"
+            style={{ fontFamily: 'Signord, sans-serif', transition: 'background 0.3s' }}
+          >
+            HAWKTOK
+          </span>
+        </a>
+        {/* Links */}
+        <div className="w-full flex justify-center mb-4 md:mb-0">
+          <a href="/datenschutz" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
         </div>
-      </div>
-
-      {/* Main Footer Content */}
-      <div className="relative z-10 container mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-          {/* Contact */}
-          <div>
-            <h3 className="text-white text-lg font-semibold mb-4">
-              Contact us:
-            </h3>
-            <a
-              href="mailto:Info@hawktok.com"
-              className="text-gray-400 hover:text-white transition-colors"
-            >
-              Info@hawktok.com
-            </a>
-          </div>
-
-          {/* Navigation */}
-          <div className="md:text-center">
-            <nav className="flex flex-col md:flex-row md:justify-center gap-4 md:gap-8">
-              {navItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="text-gray-400 hover:text-white text-sm font-medium uppercase tracking-wide transition-colors duration-300"
-                >
-                  {item.label}
-                </a>
-              ))}
-            </nav>
-          </div>
-
-          {/* Social */}
-          <div className="md:text-right">
-            <div className="flex gap-4 md:justify-end">
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                LinkedIn
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                Instagram
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom Footer */}
-        <div className="border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-600 text-sm">
-            © HAWKTOK. All rights reserved.
-          </p>
-          <div className="flex gap-6 text-gray-600 text-sm mt-4 md:mt-0">
-            <a
-              href="/datenschutz"
-              className="hover:text-white transition-colors"
-            >
-              Privacy Policy
-            </a>
-            <a href="/impressum" className="hover:text-white transition-colors">
-              Imprint
-            </a>
-          </div>
-        </div>
+        {/* Rights */}
+        <p className="text-gray-600 text-sm text-center md:text-right">© HAWKTOK. All rights reserved.</p>
       </div>
     </footer>
   );

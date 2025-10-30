@@ -6,11 +6,12 @@ import AboutSection from "@/components/AboutSection";
 import BrandsSection from "@/components/BrandsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import ShowcaseSection from "@/components/ShowcaseSection";
-import TeamSection from "@/components/TeamSection";
+import TeamSection from "@/components/FounderSection";
 import ContactSection from "@/components/ContactSection";
 import ScrollReveal from "@/components/ScrollReveal";
 import { useEffect, useState } from "react";
 import AnimatedDottedBackground from "@/components/AnimatedDottedBackground";
+import FounderSection from "@/components/FounderSection";
 
 export default function Index() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,7 +37,7 @@ export default function Index() {
         <BrandsSection />
         <ShowcaseSection />
         <TestimonialsSection />
-        <TeamSection />
+        <FounderSection />
         <ContactSection />
       </main>
 

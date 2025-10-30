@@ -1,3 +1,7 @@
+/* Utility class for Signord font */
+.font-signord {
+  font-family: 'Signord', sans-serif !important;
+}
 /** @import must precede all other statements */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Montserrat:wght@400;600;700;800&display=swap");
 
@@ -42,7 +46,7 @@
   }
   :root {
     /* Header height used for anchor offsetting to account for fixed header */
-    --header-height: 80px;
+  --header-height: 0px;
 
     --background: 0 0% 0%;
     --foreground: 0 0% 100%;

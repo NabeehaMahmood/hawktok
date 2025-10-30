@@ -20,7 +20,7 @@ export default function BrandsSection() {
         <div className="text-center mb-16">
           <div className="flex justify-center">
             <svg
-              viewBox="0 0 400 100"
+              viewBox="0 0 500 120"
               xmlns="http://www.w3.org/2000/svg"
               className="w-auto h-[4rem] md:h-[5rem]"
               role="img"
@@ -45,15 +45,15 @@ export default function BrandsSection() {
                 </linearGradient>
               </defs>
               <text
-                x="200"
-                y="60"
+                x="250"
+                y="80"
                 textAnchor="middle"
                 dominantBaseline="central"
                 fontWeight={700}
                 fontSize={80}
-                fontFamily="inherit"
+                fontFamily="'Signord', sans-serif"
                 fill="url(#brandsGradient)"
-                className="font-heading"
+                className="font-heading font-signord"
               >
                 Brands
               </text>
