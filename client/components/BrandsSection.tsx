@@ -1,7 +1,12 @@
-// Dummy brand data with actual brand names
-const brands = [
-  "NIKE", "APPLE", "AMAZON", "GOOGLE", "MICROSOFT", "TESLA", 
-  "SAMSUNG", "COCA-COLA", "DISNEY", "MCDONALDS", "VISA", "MASTERCARD"
+// Brand logos from public/BRANDS folder
+const brandLogos = [
+  { name: "TruAge Supplements", src: "/BRANDS/growns.avif", hasWhiteBg: false },
+  { name: "Opux Fragrances", src: "/BRANDS/OPUX.webp", hasWhiteBg: false },
+  { name: "Haven & Co. Homeware", src: "/BRANDS/PCALM.png", hasWhiteBg: false },
+  { name: "DS LAB", src: "/BRANDS/DS.png", hasWhiteBg: false },
+  { name: "Enviromedica", src: "/BRANDS/Enviromedica.png", hasWhiteBg: false },
+  { name: "dEZI", src: "/BRANDS/dEZI.png", hasWhiteBg: false },
+  { name: "Dear Lomum", src: "/BRANDS/dearlomum.avif", hasWhiteBg: false },
 ];
 
 export default function BrandsSection() {
@@ -60,26 +65,36 @@ export default function BrandsSection() {
         </div>
 
 
-        {/* Gradient Border Style */}
+        {/* Column number badge (blue gradient) and column inner styles */}
         <style>{`
-          .gradient-border {
-            background: linear-gradient(135deg, #FF0050 0%, #FF1A66 14%, #EE2A7B 28%, #69C9D0 42%, #00F2EA 57%, #00D4FF 71%, #0099FF 100%);
-            padding: 3px;
-            border-radius: 12px;
-          }
-          .gradient-border-inner {
+          .column-inner {
             background: #000000;
             border-radius: 10px;
             padding: 32px;
             height: 100%;
+          }
+          .number-badge {
+            font-weight: 800;
+            font-size: 2.5rem;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(90deg, #00D4FF 0%, #0099FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+          }
+          @media (min-width: 768px) {
+            .number-badge { font-size: 3rem; }
           }
         `}</style>
 
         {/* Two Column Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto mb-16">
           {/* Column 1 */}
-          <div className="gradient-border">
-            <div className="gradient-border-inner text-center md:text-left">
+          <div className="rounded-xl">
+            <div className="column-inner text-center md:text-left">
+              <div className="number-badge">01</div>
               <h3
                 className="text-3xl md:text-4xl font-bold mb-6"
                 style={{
@@ -105,8 +120,9 @@ export default function BrandsSection() {
           </div>
 
           {/* Column 2 */}
-          <div className="gradient-border">
-            <div className="gradient-border-inner text-center md:text-left">
+          <div className="rounded-xl">
+            <div className="column-inner text-center md:text-left">
+              <div className="number-badge">02</div>
               <h3
                 className="text-3xl md:text-4xl font-bold mb-6"
                 style={{
@@ -132,24 +148,31 @@ export default function BrandsSection() {
           </div>
         </div>
 
-        {/* Simple Brand Ticker - Like Footer */}
-        <div className="relative overflow-hidden bg-black py-8 border-t border-gray-900">
-          <div className="whitespace-nowrap animate-scroll-left inline-block">
-            {Array.from({ length: 3 }).map((_, i) => (
-              <span
+      </div>
+
+        {/* Ticker */}
+  <div className="relative z-20 mt-32 overflow-hidden bg-black py-[0.25in] border-t border-b border-gray-700">
+        <div
+          className="whitespace-nowrap animate-scroll-left inline-block"
+          style={{ animation: 'scroll-left 20s linear infinite' }}
+        >
+          {Array.from({ length: 100 }).map((_, i) => {
+            const logo = brandLogos[i % brandLogos.length];
+            const smallLogos = ["PCALM", "Enviromedica"];
+            const isSmall = smallLogos.some((k) => logo.name.includes(k));
+            return (
+              <img
                 key={i}
-                className="inline-block text-white text-2xl font-bold tracking-widest mr-16"
-              >
-                {brands.map((brand, index) => (
-                  <span key={index} className="mr-16">
-                    {brand} •
-                  </span>
-                ))}
-              </span>
-            ))}
-          </div>
+                src={logo.src}
+                alt={logo.name}
+                className={`inline-block ${isSmall ? 'h-[0.7in]' : 'h-[1in]'} object-contain mr-16`}
+              />
+            );
+          })}
         </div>
       </div>
+
+      
     </section>
   );
 }

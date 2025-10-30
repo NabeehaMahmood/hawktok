@@ -1,5 +1,3 @@
-
-
 export default function Footer() {
   const navItems = [
     { label: "SERVICES", href: "#services" },
@@ -13,12 +11,13 @@ export default function Footer() {
     <footer className="relative bg-black border-t border-gray-900">
       
       {/* Ticker */}
-      <div className="relative z-10 overflow-hidden bg-black py-8 border-b border-gray-900">
+      <div className="relative z-10 overflow-hidden bg-black py-[0.25in] border-b border-gray-900">
         <div className="whitespace-nowrap animate-scroll-left inline-block">
-          {Array.from({ length: 3 }).map((_, i) => (
+          {Array.from({ length: 100 }).map((_, i) => (
             <span
               key={i}
-              className="inline-block text-white text-2xl font-bold tracking-widest mr-16"
+              className="inline-block text-white text-[1in] font-bold tracking-widest mr-16"
+              style={{ fontFamily: 'Race Sport, sans-serif' }}
             >
               The $100M Flight Has Begun    •    The $100M Flight Has Begun    •    The $100M Flight Has Begun    •    The $100M Flight Has Begun    •
             </span>

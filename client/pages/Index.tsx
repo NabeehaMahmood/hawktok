@@ -4,6 +4,7 @@ import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
 import AboutSection from "@/components/AboutSection";
 import BrandsSection from "@/components/BrandsSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import ShowcaseSection from "@/components/ShowcaseSection";
 import TeamSection from "@/components/TeamSection";
 import ContactSection from "@/components/ContactSection";
@@ -34,6 +35,7 @@ export default function Index() {
         <AboutSection />
         <BrandsSection />
         <ShowcaseSection />
+        <TestimonialsSection />
         <TeamSection />
         <ContactSection />
       </main>

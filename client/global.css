@@ -9,6 +9,13 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Race Sport';
+  src: url('/fonts/Race Sport.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -425,4 +432,11 @@ body { transition: background-color 1s cubic-bezier(.25,.46,.45,.94); }
 /* Ensure buttons with bg-white always have black text */
 .bg-white, .bg-white * {
   color: rgb(0, 0, 0) !important;
+}
+
+
+
+.animate-scroll-left {
+  /* slowed slightly from 15s to 20s to reduce ticker speed a little */
+  animation: scroll-left 1500s linear infinite;
 }

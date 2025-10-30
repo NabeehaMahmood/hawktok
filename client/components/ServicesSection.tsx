@@ -1,3 +1,4 @@
+import React from "react";
 
 
 export default function ServicesSection() {
@@ -11,7 +12,7 @@ export default function ServicesSection() {
       ),
       description: "Launch and scale direct-to-consumer brands with full-stack growth systems.",
       gradientStyle: {
-        background: "linear-gradient(to right, #22d3ee, #5eead4)",
+        background: "linear-gradient(to right, #FF0050, #0099FF)",
         WebkitBackgroundClip: "text",
         WebkitTextFillColor: "transparent",
         backgroundClip: "text"
@@ -21,7 +22,7 @@ export default function ServicesSection() {
       title: "Private Label Acceleration", 
       description: "Build profitable private-label products through optimization, supply mastery, and brand identity.",
       gradientStyle: {
-        background: "linear-gradient(to right, #a855f7, #f472b6)",
+        background: "linear-gradient(to right, #FF0050, #0099FF)",
         WebkitBackgroundClip: "text",
         WebkitTextFillColor: "transparent",
         backgroundClip: "text"
@@ -31,7 +32,7 @@ export default function ServicesSection() {
       title: "TikTok Shop Affiliate Ecosystem",
       description: "Turn creators into your sales engine using viral influence and performance-driven structures.",
       gradientStyle: {
-        background: "linear-gradient(to right, #22d3ee, #3b82f6)",
+        background: "linear-gradient(to right, #FF0050, #0099FF)",
         WebkitBackgroundClip: "text",
         WebkitTextFillColor: "transparent",
         backgroundClip: "text"
@@ -41,13 +42,31 @@ export default function ServicesSection() {
       title: "E-commerce Strategy & Retention",
       description: "Architect full-funnel strategies for acquisition, retention, and lifetime value growth",
       gradientStyle: {
-        background: "linear-gradient(to right, #f472b6, #ef4444)",
+        background: "linear-gradient(to right, #FF0050, #0099FF)",
         WebkitBackgroundClip: "text",
         WebkitTextFillColor: "transparent",
         backgroundClip: "text"
       }
     },
   ];
+
+  const gradientColors = [
+    "#FF0050",
+    "#FF1A66",
+    "#EE2A7B",
+    "#69C9D0",
+    "#00F2EA",
+    "#00D4FF",
+    "#0099FF",
+  ];
+
+  // Calculate gradient stops for subheadings using the provided gradient
+  const calculateGradient = (index, total) => {
+    const step = Math.floor((gradientColors.length - 1) / (total - 1));
+    const startColor = gradientColors[index * step] || gradientColors[0];
+    const endColor = gradientColors[(index + 1) * step] || gradientColors[gradientColors.length - 1];
+    return `linear-gradient(to right, ${startColor}, ${endColor})`;
+  };
 
   return (
     <section
@@ -90,11 +109,13 @@ export default function ServicesSection() {
                   y1="0"
                   y2="0"
                 >
-                  <stop offset="0%" stopColor="#00F2EA" />
-                  <stop offset="25%" stopColor="#00D4FF" />
-                  <stop offset="50%" stopColor="#8B5CF6" />
-                  <stop offset="75%" stopColor="#EC4899" />
-                  <stop offset="100%" stopColor="#EF4444" />
+                  <stop offset="0%" stopColor="#FF0050" />
+                  <stop offset="14%" stopColor="#FF1A66" />
+                  <stop offset="28%" stopColor="#EE2A7B" />
+                  <stop offset="42%" stopColor="#69C9D0" />
+                  <stop offset="57%" stopColor="#00F2EA" />
+                  <stop offset="71%" stopColor="#00D4FF" />
+                  <stop offset="100%" stopColor="#0099FF" />
                 </linearGradient>
               </defs>
               <text
@@ -125,7 +146,10 @@ export default function ServicesSection() {
               <div className="service-card">
                 <h3 
                   className="font-bold text-3xl md:text-4xl mb-4 font-heading leading-tight"
-                  style={service.gradientStyle}
+                  style={{
+                    ...service.gradientStyle,
+                    background: calculateGradient(index, services.length),
+                  }}
                 >
                   {service.title}
                 </h3>
