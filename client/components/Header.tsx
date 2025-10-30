@@ -17,6 +17,8 @@ export default function Header({ transparent = true }: HeaderProps) {
     { label: "SERVICES", href: "#services", id: "services" },
     { label: "HAWKTOK", href: "#about", id: "about" },
     { label: "BRANDS", href: "#brands", id: "brands" },
+    { label: "SHOWCASE", href: "#showcase", id: "showcase" },
+    { label: "TESTIMONIALS", href: "#testimonials", id: "testimonials" },
     { label: "FOUNDER", href: "#founder", id: "founder" },
     { label: "CONTACT", href: "#contact", id: "contact" },
   ];
@@ -27,6 +29,10 @@ export default function Header({ transparent = true }: HeaderProps) {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setActiveSection(entry.target.id);
+            // Update URL hash when section is active
+            if (window.location.hash !== `#${entry.target.id}`) {
+              history.replaceState(null, '', `#${entry.target.id}`);
+            }
           }
 
           // Track hero section visibility
@@ -142,7 +148,7 @@ export default function Header({ transparent = true }: HeaderProps) {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-12">
+  <nav className="hidden md:flex items-center gap-3">
           {navItems.map((item) => {
             const isActive = activeSection === item.id;
             const isHovered = hoveredItem === item.id;
@@ -155,7 +161,7 @@ export default function Header({ transparent = true }: HeaderProps) {
                 onClick={(e) => handleNavClick(e, item.id)}
                 onMouseEnter={() => setHoveredItem(item.id)}
                 onMouseLeave={() => setHoveredItem(null)}
-                className="text-base uppercase tracking-wide transition-all duration-300"
+                className="text-xs uppercase tracking-wide transition-all duration-300"
                 style={showGradient ? {
                   background: 'linear-gradient(to right, #FF0050 0%, #FF1A66 14%, #EE2A7B 28%, #69C9D0 42%, #00F2EA 57%, #00D4FF 71%, #0099FF 100%)',
                   WebkitBackgroundClip: 'text',
