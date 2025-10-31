@@ -1,9 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Montserrat:wght@400;600;700;800&display=swap");
+
+/* Ticker text size for 1 inch height */
+.ticker-text {
+  font-size: 1in;
+  line-height: 1;
+}
+/* Ticker animation */
+.animate-ticker {
+  display: inline-block;
+  animation: ticker-move 12s linear infinite;
+}
+
+@keyframes ticker-move {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 /* Utility class for Signord font */
 .font-signord {
   font-family: 'Signord', sans-serif !important;
 }
 /** @import must precede all other statements */
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Montserrat:wght@400;600;700;800&display=swap");
 
 @font-face {
   font-family: 'Signord';
@@ -46,7 +66,7 @@
   }
   :root {
     /* Header height used for anchor offsetting to account for fixed header */
-  --header-height: 0px;
+  --header-height: 8px;
 
     --background: 0 0% 0%;
     --foreground: 0 0% 100%;

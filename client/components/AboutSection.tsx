@@ -89,11 +89,11 @@ export default function AboutSection() {
     <section
       ref={sectionRef}
       id="about"
-  className="relative min-h-screen py-0 px-6 scroll-mt-20 transition-all duration-1000 ease-out flex items-center bg-black"
+      className="relative min-h-screen py-32 px-6 scroll-mt-20 transition-all duration-1000 ease-out flex items-center bg-black"
     >
       
       <div className="container mx-auto">
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start mt-0 mb-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-start">
           {/* Left Column */}
           <div>
             <div className="mb-8">
@@ -116,7 +116,7 @@ export default function AboutSection() {
                   </linearGradient>
                 </defs>
                 <text
-                  x="600"
+                  x="500"
                   y="110"
                   textAnchor="middle"
                   dominantBaseline="central"
@@ -165,44 +165,39 @@ export default function AboutSection() {
 
           {/* Right Column - Benefits Vertical Scroll */}
           <div className="relative h-[500px]">
-            {/* Gradient Border Wrapper */}
-            <div className="absolute inset-0 rounded-xl p-[2px]" style={{
-              background: 'linear-gradient(135deg, #FF0050 0%, #FF1A66 14%, #EE2A7B 28%, #69C9D0 42%, #00F2EA 57%, #00D4FF 71%, #0099FF 100%)'
-            }}>
-              {/* Scrollable Container */}
-              <div 
-                ref={scrollContainerRef}
-                onWheel={handleWheel}
-                className="h-full overflow-y-auto snap-y snap-mandatory scroll-smooth pr-4 scrollbar-hide bg-black rounded-xl"
+            {/* Scrollable Container (no gradient border) */}
+            <div 
+              ref={scrollContainerRef}
+              onWheel={handleWheel}
+              className="h-full overflow-y-auto snap-y snap-mandatory scroll-smooth pr-4 scrollbar-hide bg-black rounded-xl"
+            >
+            {benefits.map((benefit, index) => (
+              <div
+                key={index}
+                className="snap-center mb-6 last:mb-0"
               >
-              {benefits.map((benefit, index) => (
-                <div
-                  key={index}
-                  className="snap-center mb-6 last:mb-0"
-                >
-                  <div className="bg-black/10 border border-black/20 rounded-xl p-8 backdrop-blur-sm hover:bg-black/20 transition-all duration-300">
-                    <div 
-                      className="font-bold text-3xl mb-4"
-                      style={{
-                        background: 'linear-gradient(180deg, #69C9D0 0%, #00F2EA 50%, #0066FF 100%)',
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
-                        backgroundClip: 'text',
-                        display: 'inline-block',
-                      }}
-                    >
-                      {benefit.number}
-                    </div>
-                    <h3 className="gradient-heading font-bold text-2xl font-heading mb-4">
-                      {benefit.title}
-                    </h3>
-                    <p className="text-base leading-relaxed opacity-70" style={{ color: 'var(--dynamic-text-color)' }}>
-                      {benefit.description}
-                    </p>
+                <div className="bg-black/10 border border-black/20 rounded-xl p-8 backdrop-blur-sm hover:bg-black/20 transition-all duration-300">
+                  <div 
+                    className="font-bold text-3xl mb-4"
+                    style={{
+                      background: 'linear-gradient(180deg, #69C9D0 0%, #00F2EA 50%, #0066FF 100%)',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                      backgroundClip: 'text',
+                      display: 'inline-block',
+                    }}
+                  >
+                    {benefit.number}
                   </div>
+                  <h3 className="gradient-heading font-bold text-2xl font-heading mb-4">
+                    {benefit.title}
+                  </h3>
+                  <p className="text-base leading-relaxed opacity-70" style={{ color: 'var(--dynamic-text-color)' }}>
+                    {benefit.description}
+                  </p>
                 </div>
-              ))}
               </div>
+            ))}
             </div>
           </div>
         </div>

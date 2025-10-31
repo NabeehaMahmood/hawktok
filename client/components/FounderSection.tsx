@@ -4,7 +4,7 @@ export default function FounderSection() {
   return (
     <section
       id="founder"
-  className="relative py-0 px-6 scroll-mt-20 transition-all duration-1000 ease-out bg-black"
+      className="relative py-32 px-6 scroll-mt-20 transition-all duration-1000 ease-out bg-black"
     >
       <AnimatedDottedBackground particleCount={150} />
       <div className="container mx-auto relative z-10">
