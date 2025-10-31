@@ -33,7 +33,7 @@ export default function Footer() {
         </a>
         {/* Links */}
         <div className="w-full flex justify-center mb-4 md:mb-0">
-          <a href="/datenschutz" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+          <a href="/privacy-policy" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
         </div>
         {/* Rights */}
         <p className="text-gray-600 text-sm text-center md:text-right">© HAWKTOK. All rights reserved.</p>

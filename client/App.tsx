@@ -6,10 +6,14 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Index from "./pages/Index";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import CustomCursor from "@/components/CustomCursor";
 import SectionObserver from "@/components/SectionObserver";
 
 const queryClient = new QueryClient();
+
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -18,7 +22,12 @@ const App = () => (
       <Sonner />
       <CustomCursor />
       <SectionObserver />
-      <Index />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        </Routes>
+      </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );
