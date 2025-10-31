@@ -11,13 +11,15 @@ export default function HeroSection() {
       <div className="relative z-10 flex flex-col items-center text-center -mt-18">
         {/* HAWKTOK Logo Image */}
         <div className="mb-4">
-          <div className="relative group w-96 h-96 md:w-90 md:h-90 mx-auto">
-            <img
-              src="/HAWKTOK-logo.svg"
-              alt="HAWKTOK Logo"
-              className="relative w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
-            />
-          </div>
+            <div className="relative group w-96 h-96 md:w-90 md:h-90 mx-auto">
+              {/* White hover effect background */}
+              <div className="absolute left-1/2 top-1/2 w-2/3 h-2/3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white opacity-0 group-hover:opacity-90 group-hover:blur-2xl transition-all duration-300 pointer-events-none" />
+              <img
+                src="/HAWKTOK-logo.svg"
+                alt="HAWKTOK Logo"
+                className="relative w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
+              />
+            </div>
         </div>
 
         {/* Title */}
