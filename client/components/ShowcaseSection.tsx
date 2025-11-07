@@ -36,12 +36,12 @@ export default function ShowcaseSection() {
   return (
     <section
       id="showcase"
-      className="relative py-32 px-6 scroll-mt-20 transition-all duration-1000 ease-out bg-black overflow-hidden"
+      className="relative py-16 md:py-32 px-4 md:px-6 scroll-mt-20 transition-all duration-1000 ease-out bg-black overflow-hidden"
     >
       <div className="container mx-auto relative z-10 max-w-7xl">
         {/* Section Title */}
-        <div className="text-center mb-20">
-          <h2 className="relative mb-6" aria-label="Showcases">
+        <div className="text-center mb-12 md:mb-20">
+          <h2 className="relative mb-4 md:mb-6" aria-label="Showcases">
             {/* Visible SVG gradient text for visual users */}
             <svg
               viewBox="0 0 1200 200"
@@ -79,21 +79,21 @@ export default function ShowcaseSection() {
             {/* Keep text for screen readers */}
             <span className="sr-only">Showcases</span>
           </h2>
-          <p className="text-gray-300 text-lg md:text-xl">
+          <p className="text-gray-300 text-base md:text-lg lg:text-xl">
             Proof over promises — every number earned, not claimed.
           </p>
         </div>
 
         {/* Showcases Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20">
           {showcases.map((showcase, index) => (
             <div
               key={index}
               className="group relative"
             >
               {/* Header */}
-              <div className="mb-10">
-                <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              <div className="mb-6 md:mb-10">
+                <h3 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 md:mb-6 leading-tight">
                   <span className="text-white">
                     {Array.isArray(showcase.title) ? (
                       <>
@@ -166,10 +166,10 @@ export default function ShowcaseSection() {
                     )}
                   </span>
                 </h3>
-                <p className="text-gray-300 text-base md:text-lg mb-4">
+                <p className="text-gray-300 text-sm md:text-base lg:text-lg mb-3 md:mb-4">
                   {showcase.subtitle}
                 </p>
-                <p className="text-3xl md:text-4xl font-bold mb-2">
+                <p className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2">
                   <span
                     style={{
                       background: verticalBlueGradient,
@@ -182,7 +182,7 @@ export default function ShowcaseSection() {
                     {showcase.revenue}
                   </span>
                 </p>
-                <p className="text-gray-300 text-base md:text-lg">
+                <p className="text-gray-300 text-sm md:text-base lg:text-lg">
                   {showcase.description}
                 </p>
               </div>

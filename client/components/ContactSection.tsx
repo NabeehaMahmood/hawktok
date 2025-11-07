@@ -4,11 +4,11 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="relative py-32 px-6 scroll-mt-20 transition-all duration-1000 ease-out bg-black"
+      className="relative py-16 md:py-32 px-4 md:px-6 scroll-mt-20 transition-all duration-1000 ease-out bg-black"
     >
       
-      <div className="container mx-auto relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+      <div className="container mx-auto relative z-10 max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
           {/* Left Column */}
           <div>
             <div className="mb-8">
@@ -52,7 +52,7 @@ export default function ContactSection() {
                 </text>
               </svg>
             </div>
-            <p className="text-gray-400 text-lg leading-relaxed mb-12">
+            <p className="text-gray-400 text-base md:text-lg leading-relaxed mb-8 md:mb-12">
               We're looking forward to hearing from you. Whether you want to
               optimize an existing project or start from scratch - let's achieve
               your goals together.
@@ -83,9 +83,9 @@ export default function ContactSection() {
           </div>
 
           {/* Right Column */}
-          <div className="space-y-8">
+          <div className="space-y-6 md:space-y-8">
             <div>
-              <h3 className="gradient-heading font-bold text-lg mb-4 font-heading">
+              <h3 className="gradient-heading font-bold text-base md:text-lg mb-4 font-heading">
                 Contact
               </h3>
               <div className="space-y-3">

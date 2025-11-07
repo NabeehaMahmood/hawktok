@@ -71,7 +71,7 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="relative py-32 px-6 scroll-mt-20 transition-all duration-1000 ease-out bg-black"
+      className="relative py-16 md:py-32 px-4 md:px-6 scroll-mt-20 transition-all duration-1000 ease-out bg-black"
     >
       
       <style>{`
@@ -89,9 +89,9 @@ export default function ServicesSection() {
           color: transparent;
         }
       `}</style>
-      <div className="container mx-auto relative z-10">
+      <div className="container mx-auto relative z-10 max-w-7xl">
         {/* Section Title */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 md:mb-20">
           <div className="flex justify-center">
             <svg
               viewBox="0 0 700 120"
@@ -133,19 +133,19 @@ export default function ServicesSection() {
               </text>
             </svg>
           </div>
-          <p className="text-gray-300 text-lg mt-6 max-w-2xl mx-auto">
+          <p className="text-gray-300 text-base md:text-lg mt-6 max-w-2xl mx-auto">
             From foundations to full-scale dominance—<br />
             here's how we help brands soar.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 max-w-5xl mx-auto">
           {services.map((service, index) => (
             <div key={index} className="group">
               <div className="service-card">
                 <h3 
-                  className="font-bold text-3xl md:text-4xl mb-4 font-heading leading-tight"
+                  className="font-bold text-2xl md:text-3xl lg:text-4xl mb-4 font-heading leading-tight"
                   style={{
                     ...service.gradientStyle,
                     background: calculateGradient(index, services.length),
@@ -153,7 +153,7 @@ export default function ServicesSection() {
                 >
                   {service.title}
                 </h3>
-                <p className="text-gray-300 leading-relaxed text-lg">
+                <p className="text-gray-300 leading-relaxed text-base md:text-lg">
                   {service.description}
                 </p>
               </div>

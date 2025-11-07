@@ -26,12 +26,12 @@ export default function TestimonialsSection() {
   return (
     <section
       id="testimonials"
-      className="relative py-32 px-6 scroll-mt-20 transition-all duration-1000 ease-out bg-black"
+      className="relative py-16 md:py-32 px-4 md:px-6 scroll-mt-20 transition-all duration-1000 ease-out bg-black"
     >
       <AnimatedDottedBackground particleCount={120} />
-      <div className="container mx-auto relative z-10">
+      <div className="container mx-auto relative z-10 max-w-7xl">
         {/* Section Title */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 md:mb-16">
           <div className="flex justify-center">
             <svg
               viewBox="0 0 900 120"
@@ -76,31 +76,31 @@ export default function TestimonialsSection() {
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="group relative bg-gradient-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50 hover:border-[#FF0050]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[#FF0050]/10"
+              className="group relative bg-gradient-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-gray-700/50 hover:border-[#FF0050]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[#FF0050]/10"
             >
               {/* Quote Icon */}
-              <div className="mb-6">
-                <Quote className="w-12 h-12 text-[#FF0050] opacity-50" />
+              <div className="mb-4 md:mb-6">
+                <Quote className="w-10 h-10 md:w-12 md:h-12 text-[#FF0050] opacity-50" />
               </div>
 
               {/* Quote Text */}
-              <blockquote className="text-gray-200 text-base md:text-lg leading-relaxed mb-6 min-h-[180px]">
+              <blockquote className="text-gray-200 text-sm md:text-base lg:text-lg leading-relaxed mb-6 min-h-[140px] md:min-h-[180px]">
                 "{testimonial.quote}"
               </blockquote>
 
               {/* Author Info */}
               <div className="pt-4 border-t border-gray-700/50">
-                <p className="font-bold text-lg gradient-heading mb-1">
+                <p className="font-bold text-base md:text-lg gradient-heading mb-1">
                   {testimonial.name}
                 </p>
-                <p className="text-gray-400 text-sm">
+                <p className="text-gray-400 text-xs md:text-sm">
                   {testimonial.title}
                 </p>
-                <p className="text-gray-500 text-sm">
+                <p className="text-gray-500 text-xs md:text-sm">
                   {testimonial.location}
                 </p>
               </div>

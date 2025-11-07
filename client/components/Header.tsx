@@ -104,7 +104,7 @@ export default function Header({ transparent = true }: HeaderProps) {
         transparent ? "bg-transparent" : "bg-black/95 backdrop-blur-sm",
       )}
     >
-      <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="container mx-auto px-4 md:px-6 py-3 md:py-4 flex items-center justify-between max-w-7xl">
         {/* Logo */}
         <div className="flex-shrink-0">
           <a
@@ -114,10 +114,10 @@ export default function Header({ transparent = true }: HeaderProps) {
             <img 
               src="/HAWKTOK-logo.svg" 
               alt="HAWKTOK Logo"
-              className="h-20 w-auto"
+              className="h-10 md:h-20 w-auto"
             />
             <span 
-              className="text-3xl font-bold tracking-[0.2em] relative"
+              className="text-2xl md:text-3xl font-bold tracking-[0.2em] relative"
               style={{
                 fontFamily: 'Signord, sans-serif',
               }}
@@ -148,7 +148,7 @@ export default function Header({ transparent = true }: HeaderProps) {
         </div>
 
         {/* Desktop Navigation */}
-  <nav className="hidden md:flex items-center gap-3">
+  <nav className="hidden xl:flex items-center gap-2 2xl:gap-3">
           {navItems.map((item) => {
             const isActive = activeSection === item.id;
             const isHovered = hoveredItem === item.id;
@@ -161,7 +161,7 @@ export default function Header({ transparent = true }: HeaderProps) {
                 onClick={(e) => handleNavClick(e, item.id)}
                 onMouseEnter={() => setHoveredItem(item.id)}
                 onMouseLeave={() => setHoveredItem(null)}
-                className="text-xs uppercase tracking-wide transition-all duration-300"
+                className="text-xs 2xl:text-sm uppercase tracking-wide transition-all duration-300"
                 style={showGradient ? {
                   background: 'linear-gradient(to right, #FF0050 0%, #FF1A66 14%, #EE2A7B 28%, #69C9D0 42%, #00F2EA 57%, #00D4FF 71%, #0099FF 100%)',
                   WebkitBackgroundClip: 'text',
@@ -182,7 +182,7 @@ export default function Header({ transparent = true }: HeaderProps) {
         </nav>
 
         {/* Social Icons */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden 2xl:flex items-center gap-3">
           <div 
             className="rounded-xl p-[2px] transition-all duration-300"
             style={{ background: 'transparent' }}
@@ -231,7 +231,7 @@ export default function Header({ transparent = true }: HeaderProps) {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white p-2"
+          className="xl:hidden text-white p-2"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -241,8 +241,8 @@ export default function Header({ transparent = true }: HeaderProps) {
 
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-black/95 border-t border-gray-700">
-          <nav className="container mx-auto px-6 py-4 flex flex-col gap-4">
+        <div className="xl:hidden bg-black/95 border-t border-gray-700">
+          <nav className="container mx-auto px-4 md:px-6 py-4 flex flex-col gap-4 max-w-7xl">
             {navItems.map((item) => (
               <a
                 key={item.href}

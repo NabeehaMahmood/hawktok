@@ -5,13 +5,13 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative w-full min-h-screen overflow-hidden flex items-center justify-center"
+      className="relative w-full min-h-screen overflow-hidden flex items-center justify-center px-4 md:px-6"
     >
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center text-center -mt-18">
+      <div className="relative z-10 flex flex-col items-center text-center -mt-4 md:-mt-18 max-w-4xl mx-auto">
         {/* HAWKTOK Logo Image */}
         <div className="mb-4">
-            <div className="relative group w-96 h-96 md:w-90 md:h-90 mx-auto">
+            <div className="relative group w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 mx-auto">
               {/* White hover effect background */}
               <div className="absolute left-1/2 top-1/2 w-2/3 h-2/3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white opacity-0 group-hover:opacity-90 group-hover:blur-2xl transition-all duration-300 pointer-events-none" />
               <img
@@ -23,7 +23,7 @@ export default function HeroSection() {
         </div>
 
         {/* Title */}
-        <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tighter mb-4">
+  <h1 className="text-3xl md:text-6xl font-bold text-white tracking-tighter mb-4">
             WE TURN DTC BRANDS
           <br />
             INTO INFLUENCERS.
@@ -31,11 +31,9 @@ export default function HeroSection() {
         </h1>
 
         {/* Subtitle */}
-        <p className="text-lg md:text-xl text-gray-300 max-w-md mx-auto mb-8">
+        <p className="text-base md:text-xl text-gray-300 max-w-md mx-auto mb-8 px-4">
           And make them generate $100k in 4 months.
-        </p>
-
-        {/* CTA Button */}
+        </p>        {/* CTA Button */}
         <Button
           size="lg"
           className="text-white font-bold text-lg py-3 px-8 rounded-full hover:scale-105 transition-transform duration-300"

@@ -89,11 +89,11 @@ export default function AboutSection() {
     <section
       ref={sectionRef}
       id="about"
-      className="relative min-h-screen py-32 px-6 scroll-mt-20 transition-all duration-1000 ease-out flex items-center bg-black"
+      className="relative min-h-screen py-16 md:py-32 px-4 md:px-6 scroll-mt-20 transition-all duration-1000 ease-out flex items-center bg-black"
     >
       
-      <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-start">
+      <div className="container mx-auto max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-start">
           {/* Left Column */}
           <div>
             <div className="mb-8">
@@ -130,13 +130,13 @@ export default function AboutSection() {
                 </text>
               </svg>
             </div>
-            <p className="text-lg leading-relaxed mb-2 opacity-70" style={{ color: 'var(--dynamic-text-color)' }}>
-              “We only focus on our prey — and our prey is the buyer.”
+            <p className="text-base md:text-lg leading-relaxed mb-2 opacity-70" style={{ color: 'var(--dynamic-text-color)' }}>
+              "We only focus on our prey — and our prey is the buyer."
             </p>
-            <p className="text-lg leading-relaxed mb-6 opacity-70" style={{ color: 'var(--dynamic-text-color)' }}>
-              For us, marketing isn’t about chasing trends or luck. It’s a calculated pursuit built on understanding psychology, positioning, and the one thing that matters most: the buyer.
+            <p className="text-base md:text-lg leading-relaxed mb-6 opacity-70" style={{ color: 'var(--dynamic-text-color)' }}>
+              For us, marketing isn't about chasing trends or luck. It's a calculated pursuit built on understanding psychology, positioning, and the one thing that matters most: the buyer.
             </p>
-            <p className="text-lg leading-relaxed mb-12 opacity-70" style={{ color: 'var(--dynamic-text-color)' }}>
+            <p className="text-base md:text-lg leading-relaxed mb-12 opacity-70" style={{ color: 'var(--dynamic-text-color)' }}>
               Because in today's world, content sells but only when it's built around the person watching, scrolling, and deciding.
             </p>
             <a
@@ -164,21 +164,21 @@ export default function AboutSection() {
           </div>
 
           {/* Right Column - Benefits Vertical Scroll */}
-          <div className="relative h-[500px]">
+          <div className="relative h-[400px] md:h-[500px]">
             {/* Scrollable Container (no gradient border) */}
             <div 
               ref={scrollContainerRef}
               onWheel={handleWheel}
-              className="h-full overflow-y-auto snap-y snap-mandatory scroll-smooth pr-4 scrollbar-hide bg-black rounded-xl"
+              className="h-full overflow-y-auto snap-y snap-mandatory scroll-smooth pr-2 md:pr-4 scrollbar-hide bg-black rounded-xl"
             >
             {benefits.map((benefit, index) => (
               <div
                 key={index}
                 className="snap-center mb-6 last:mb-0"
               >
-                <div className="bg-black/10 border border-black/20 rounded-xl p-8 backdrop-blur-sm hover:bg-black/20 transition-all duration-300">
+                <div className="bg-black/10 border border-black/20 rounded-xl p-4 md:p-8 backdrop-blur-sm hover:bg-black/20 transition-all duration-300">
                   <div 
-                    className="font-bold text-3xl mb-4"
+                    className="font-bold text-2xl md:text-3xl mb-4"
                     style={{
                       background: 'linear-gradient(180deg, #69C9D0 0%, #00F2EA 50%, #0066FF 100%)',
                       WebkitBackgroundClip: 'text',
@@ -189,10 +189,10 @@ export default function AboutSection() {
                   >
                     {benefit.number}
                   </div>
-                  <h3 className="gradient-heading font-bold text-2xl font-heading mb-4">
+                  <h3 className="gradient-heading font-bold text-xl md:text-2xl font-heading mb-4">
                     {benefit.title}
                   </h3>
-                  <p className="text-base leading-relaxed opacity-70" style={{ color: 'var(--dynamic-text-color)' }}>
+                  <p className="text-sm md:text-base leading-relaxed opacity-70" style={{ color: 'var(--dynamic-text-color)' }}>
                     {benefit.description}
                   </p>
                 </div>

@@ -161,11 +161,17 @@
     scroll-behavior: smooth;
     /* Use a CSS variable so header height can be tuned in one place */
     scroll-padding-top: var(--header-height);
+    overflow-x: hidden;
+  }
+
+  body {
+    overflow-x: hidden;
   }
 
   /* Apply the header offset to all sections so fragment links land below the fixed header */
   section {
     scroll-margin-top: var(--header-height);
+    overflow-x: hidden;
   }
 
   /* Reduce top and bottom spacing for all sections by 5px */
@@ -175,9 +181,12 @@
   }
 
 
-  section > .container {
-    margin-block-start: -50px;
-    margin-block-end: -50px;
+  /* Avoid overlapping containers on small screens — only offset on md+ */
+  @media (min-width: 768px) {
+    section > .container {
+      margin-block-start: -50px;
+      margin-block-end: -50px;
+    }
   }
 
   /* Smooth reveal animation for sections when scrolled into view.
