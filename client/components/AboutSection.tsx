@@ -95,40 +95,21 @@ export default function AboutSection() {
       <div className="container mx-auto max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-start">
           {/* Left Column */}
-          <div>
-            <div className="mb-8">
-              <svg
-                viewBox="0 0 1200 160"
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-auto h-[3.5rem] md:h-[4.5rem]"
-                role="img"
-                aria-label="Why HawkTok?"
+          <div className="overflow-hidden">
+            <div className="mb-8 max-w-full">
+              <h2 
+                className="text-3xl sm:text-4xl md:text-3xl lg:text-5xl xl:text-6xl font-bold font-heading font-signord leading-tight break-words"
+                style={{
+                  background: 'linear-gradient(90deg, #FF0050, #FF1A66, #EE2A7B, #69C9D0, #00F2EA, #00D4FF, #0099FF)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  display: 'inline-block',
+                  maxWidth: '100%',
+                }}
               >
-                <defs>
-                  <linearGradient id="aboutGradient" gradientUnits="userSpaceOnUse" x1="0" x2="700" y1="0" y2="0">
-                    <stop offset="0%" stopColor="#FF0050" />
-                    <stop offset="14%" stopColor="#FF1A66" />
-                    <stop offset="28%" stopColor="#EE2A7B" />
-                    <stop offset="42%" stopColor="#69C9D0" />
-                    <stop offset="57%" stopColor="#00F2EA" />
-                    <stop offset="71%" stopColor="#00D4FF" />
-                    <stop offset="100%" stopColor="#0099FF" />
-                  </linearGradient>
-                </defs>
-                <text
-                  x="500"
-                  y="110"
-                  textAnchor="middle"
-                  dominantBaseline="central"
-                  fontWeight={700}
-                  fontSize={80}
-                  fontFamily="'Signord', sans-serif"
-                  fill="url(#aboutGradient)"
-                  className="font-heading font-signord"
-                >
-                  Why HawkTok?
-                </text>
-              </svg>
+                Why HawkTok?
+              </h2>
             </div>
             <p className="text-base md:text-lg leading-relaxed mb-2 opacity-70" style={{ color: 'var(--dynamic-text-color)' }}>
               "We only focus on our prey — and our prey is the buyer."
