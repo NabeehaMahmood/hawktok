@@ -90,7 +90,7 @@ export default function Footer() {
           display: inline-block;
           white-space: nowrap;
           will-change: transform;
-          animation: ticker 40s linear infinite;
+          animation: ticker 60s linear infinite;
         }
 
         @keyframes ticker {

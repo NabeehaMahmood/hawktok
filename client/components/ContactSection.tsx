@@ -1,6 +1,8 @@
-
+import { useState } from "react";
+import ContactFormDialog from "@/components/ContactFormDialog";
 
 export default function ContactSection() {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
   return (
     <section
       id="contact"
@@ -30,9 +32,9 @@ export default function ContactSection() {
               optimize an existing project or start from scratch - let's achieve
               your goals together.
             </p>
-            <a
-              href="#contact"
-              className="inline-block px-8 py-4 font-bold rounded-lg transition-all duration-300 hover:opacity-90"
+            <button
+              onClick={() => setIsDialogOpen(true)}
+              className="inline-block px-8 py-4 font-bold rounded-lg transition-all duration-300 hover:opacity-90 cursor-pointer"
               style={{
                 background:
                   "linear-gradient(90deg, #FF0050, #FF1A66, #EE2A7B, #69C9D0, #00F2EA, #00D4FF, #0099FF, #FF0050, #FF1A66, #EE2A7B, #69C9D0, #00F2EA, #00D4FF, #0099FF)",
@@ -42,7 +44,12 @@ export default function ContactSection() {
               }}
             >
               Schedule consultation
-            </a>
+            </button>
+            
+            <ContactFormDialog 
+              open={isDialogOpen} 
+              onOpenChange={setIsDialogOpen} 
+            />
             <style>{`
               @keyframes gradientMove {
                 0% {

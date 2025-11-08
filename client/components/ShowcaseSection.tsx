@@ -16,9 +16,8 @@ export default function ShowcaseSection() {
       subtitle: "Helping a small seller evolve into a 6-figure powerhouse.",
       revenue: "$157K+ in 110 days",
       description: "through affiliate growth and storytelling built for conversion.",
-      image: "/2.jpg",
-      imageAlt: "Verified Store Results - TikTok Shop Analytics" 
-      ,
+      image: "/2.png",
+      imageAlt: "Verified Store Results - TikTok Shop Analytics",
     },
   ];
 
