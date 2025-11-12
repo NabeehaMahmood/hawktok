@@ -7,10 +7,20 @@ const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
 
 const app = express();
-const PORT = 5000;
 
-app.use(cors());
+// Use environment PORT for Render deployment
+const PORT = process.env.PORT || 3000;
+
+// CORS configuration - Allow your Hostinger frontend domain
+const allowedOrigin = process.env.CLIENT_ORIGIN || '*';
+app.use(cors({
+  origin: allowedOrigin,
+  methods: ['GET', 'POST', 'OPTIONS'],
+  credentials: true
+}));
+
 app.use(bodyParser.json());
+app.use(express.json());
 
 // Debug environment variables
 console.log("🔍 Environment Check:");
@@ -146,6 +156,13 @@ ${message}
   }
 });
 
+// Health check endpoint for Render
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok', message: 'Server is running' });
+});
+
 app.listen(PORT, () => {
-  console.log(`✅ Server running at http://localhost:${PORT}`);
+  console.log(`✅ Server running on port ${PORT}`);
+  console.log(`🌍 Environment: ${process.env.NODE_ENV || 'development'}`);
+  console.log(`🔗 CORS allowed origin: ${allowedOrigin}`);
 });
