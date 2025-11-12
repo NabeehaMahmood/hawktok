@@ -15,6 +15,9 @@ export default function Index() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+    
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 100);
     };

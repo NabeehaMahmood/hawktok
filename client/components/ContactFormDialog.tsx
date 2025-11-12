@@ -109,7 +109,8 @@ export default function ContactFormDialog({
       
       messageBody += `\nMessage:\n${formData.message}`;
 
-      const response = await fetch("/api/contact", {
+      const apiUrl = import.meta.env.VITE_API_URL || "https://hawktok-backend.vercel.app";
+      const response = await fetch(`${apiUrl}/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

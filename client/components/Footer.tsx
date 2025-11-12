@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Footer() {
   return (
    <footer className="relative bg-black border-t border-gray-900 py-8">
@@ -64,9 +66,9 @@ export default function Footer() {
 
         {/* Links */}
         <div className="flex justify-center">
-          <a href="/privacy-policy" className="text-gray-400 hover:text-white text-sm transition-colors">
+          <Link to="/privacy-policy" className="text-gray-400 hover:text-white text-sm transition-colors">
             Privacy Policy
-          </a>
+          </Link>
         </div>
 
         {/* Rights */}

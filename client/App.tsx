@@ -10,6 +10,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
 import CustomCursor from "@/components/CustomCursor";
 import SectionObserver from "@/components/SectionObserver";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -22,10 +23,10 @@ const App = () => (
       <Toaster />
       <Sonner />
       <CustomCursor />
-      <SectionObserver />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
-          <Route path="/" element={<Index />} />
+          <Route path="/" element={<><SectionObserver /><Index /></>} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
