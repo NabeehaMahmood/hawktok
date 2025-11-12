@@ -6,9 +6,10 @@ export default function HeroSection() {
     <section
       id="hero"
       className="relative w-full min-h-screen overflow-hidden flex items-center justify-center px-4 md:px-6"
+      style={{ paddingTop: 'clamp(5rem, 8vw, 10rem)' }}
     >
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center text-center -mt-4 md:-mt-18 max-w-4xl mx-auto">
+      <div className="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto">
         {/* HAWKTOK Logo Image */}
         <div className="mb-4">
             <div className="relative group w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 mx-auto">

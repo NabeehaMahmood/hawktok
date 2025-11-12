@@ -34,40 +34,131 @@ export default function ContactFormDialog({
     instagramUrl: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [phoneError, setPhoneError] = useState("");
+
+  const validatePhone = (phone: string): boolean => {
+    if (!phone) return true; // Phone is optional
+    
+    // International phone number regex: + followed by 1-3 digits (country code) then 6-14 digits
+    const phoneRegex = /^\+\d{1,3}\s?\d{6,14}$/;
+    return phoneRegex.test(phone.replace(/[\s-()]/g, ''));
+  };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    
+    if (name === "phone") {
+      let phoneValue = value;
+      
+      // Ensure phone always starts with +
+      if (phoneValue && !phoneValue.startsWith('+')) {
+        phoneValue = '+' + phoneValue;
+      }
+      
+      // Remove leading 0 after the + (discard 0 as first digit)
+      if (phoneValue.startsWith('+0')) {
+        phoneValue = '+' + phoneValue.slice(2);
+      }
+      
+      setFormData((prev) => ({ ...prev, [name]: phoneValue }));
+      
+      // Validate phone number in real-time
+      if (phoneValue && !validatePhone(phoneValue)) {
+        setPhoneError("Please enter a valid international phone number (e.g., +1 234567890)");
+      } else {
+        setPhoneError("");
+      }
+    } else {
+      setFormData((prev) => ({ ...prev, [name]: value }));
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate phone number before submission
+    if (formData.phone && !validatePhone(formData.phone)) {
+      toast({
+        title: "Invalid Phone Number",
+        description: "Please enter a valid international phone number with country code (e.g., +92 300 1234567)",
+        variant: "destructive",
+      });
+      return;
+    }
+    
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      // Build message based on user type - only include relevant fields
+      let messageBody = `User Type: ${formData.userType}\n`;
+      
+      if (formData.phone) {
+        messageBody += `Phone: ${formData.phone}\n`;
+      }
+      
+      // Add type-specific fields
+      if (formData.userType === "individual" && formData.company) {
+        messageBody += `Company: ${formData.company}\n`;
+      } else if (formData.userType === "creator" && formData.tiktokUrl) {
+        messageBody += `TikTok URL: ${formData.tiktokUrl}\n`;
+      } else if (formData.userType === "brand" && formData.tiktokShopLink) {
+        messageBody += `TikTok Shop Link: ${formData.tiktokShopLink}\n`;
+      }
+      
+      messageBody += `\nMessage:\n${formData.message}`;
 
-    toast({
-      title: "Message Sent!",
-      description: "We'll get back to you within 24 hours.",
-    });
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: messageBody.trim(),
+        }),
+      });
 
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      message: "",
-      userType: "individual",
-      tiktokUrl: "",
-      tiktokShopLink: "",
-      instagramUrl: "",
-    });
-    setIsSubmitting(false);
-    onOpenChange(false);
+      const data = await response.json();
+
+      if (data.success) {
+        toast({
+          title: "Message Sent! ✉️",
+          description: "We'll get back to you within 24 hours.",
+        });
+
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          message: "",
+          userType: "individual",
+          tiktokUrl: "",
+          tiktokShopLink: "",
+          instagramUrl: "",
+        });
+        onOpenChange(false);
+      } else {
+        toast({
+          title: "Error",
+          description: data.msg || "Failed to send message. Please try again.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please check your connection and try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -200,17 +291,27 @@ export default function ContactFormDialog({
           {/* Phone Field */}
           <div className="space-y-2">
             <Label htmlFor="phone" className="text-gray-300">
-              Phone
+              Phone (International Format)
             </Label>
-            <Input
-              id="phone"
-              name="phone"
-              type="tel"
-              value={formData.phone}
-              onChange={handleChange}
-              className="bg-gray-900 border-gray-700 text-white focus:border-[#00F2EA] focus:ring-[#00F2EA] transition-colors"
-              placeholder="+1 (555) 123-4567"
-            />
+            <div className="relative">
+              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">
+                +
+              </span>
+              <Input
+                id="phone"
+                name="phone"
+                type="tel"
+                value={formData.phone}
+                onChange={handleChange}
+                className={`bg-gray-900 border-gray-700 text-white focus:border-[#00F2EA] focus:ring-[#00F2EA] transition-colors pl-7 ${
+                  phoneError ? "border-red-500" : ""
+                }`}
+                placeholder="1 (555) 123-4567"
+              />
+            </div>
+            {phoneError && (
+              <p className="text-red-500 text-sm mt-1">{phoneError}</p>
+            )}
           </div>
 
           {/* Conditional Fields based on userType */}
@@ -219,7 +320,7 @@ export default function ContactFormDialog({
               {/* TikTok URL Field */}
               <div className="space-y-2">
                 <Label htmlFor="tiktokUrl" className="text-gray-300">
-                  TikTok URL
+                  TikTok URL *
                 </Label>
                 <Input
                   id="tiktokUrl"
@@ -227,6 +328,7 @@ export default function ContactFormDialog({
                   type="url"
                   value={formData.tiktokUrl}
                   onChange={handleChange}
+                  required
                   className="bg-gray-900 border-gray-700 text-white focus:border-[#00F2EA] focus:ring-[#00F2EA] transition-colors"
                   placeholder="https://tiktok.com/@username"
                 />
@@ -236,7 +338,7 @@ export default function ContactFormDialog({
             /* TikTok Shop Link - Only for Brand */
             <div className="space-y-2">
               <Label htmlFor="tiktokShopLink" className="text-gray-300">
-                TikTok Shop Link
+                TikTok Shop Link *
               </Label>
               <Input
                 id="tiktokShopLink"
@@ -244,6 +346,7 @@ export default function ContactFormDialog({
                 type="url"
                 value={formData.tiktokShopLink}
                 onChange={handleChange}
+                required
                 className="bg-gray-900 border-gray-700 text-white focus:border-[#00F2EA] focus:ring-[#00F2EA] transition-colors"
                 placeholder="https://shop.tiktok.com/..."
               />
@@ -252,13 +355,14 @@ export default function ContactFormDialog({
             /* Company Field - Only for Individual */
             <div className="space-y-2">
               <Label htmlFor="company" className="text-gray-300">
-                Company
+                Company *
               </Label>
               <Input
                 id="company"
                 name="company"
                 value={formData.company}
                 onChange={handleChange}
+                required
                 className="bg-gray-900 border-gray-700 text-white focus:border-[#00F2EA] focus:ring-[#00F2EA] transition-colors"
                 placeholder="Your company name"
               />
