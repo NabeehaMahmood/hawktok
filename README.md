@@ -1,6 +1,6 @@
 # HawkTok
 
-HawkTok is a premier TikTok marketing agency that transforms DTC brands into influencers, helping them generate $100k in 4 months through strategic content creation and buyer-focused marketing.
+HawkTok is a premier TikTok marketing agency that transforms DTC brands into influencers, And make them 7 figure Brands through strategic content creation and buyer-focused marketing.
 
 "We only focus on our prey — and our prey is the buyer." HawkTok specializes in calculated marketing built on understanding psychology, positioning, and the buyer's perspective.
 

@@ -146,12 +146,19 @@ export default function AboutSection() {
 
           {/* Right Column - Benefits Vertical Scroll */}
           <div className="relative h-[400px] md:h-[500px]">
-            {/* Scrollable Container (no gradient border) */}
+            {/* Gradient Border Wrapper */}
             <div 
-              ref={scrollContainerRef}
-              onWheel={handleWheel}
-              className="h-full overflow-y-auto snap-y snap-mandatory scroll-smooth pr-2 md:pr-4 scrollbar-hide bg-black rounded-xl"
+              className="h-full p-[2px] rounded-xl"
+              style={{
+                background: 'linear-gradient(135deg, #FF0050 0%, #FF1A66 15%, #EE2A7B 30%, #69C9D0 50%, #00F2EA 65%, #00D4FF 80%, #0099FF 100%)',
+              }}
             >
+              {/* Scrollable Container */}
+              <div 
+                ref={scrollContainerRef}
+                onWheel={handleWheel}
+                className="h-full overflow-y-auto snap-y snap-mandatory scroll-smooth pr-2 md:pr-4 scrollbar-hide bg-black rounded-xl"
+              >
             {benefits.map((benefit, index) => (
               <div
                 key={index}
@@ -179,6 +186,7 @@ export default function AboutSection() {
                 </div>
               </div>
             ))}
+              </div>
             </div>
           </div>
         </div>

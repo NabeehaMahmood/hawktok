@@ -58,11 +58,14 @@
     --dynamic-text-color: rgb(255, 255, 255);
   }
 
-  /* Smooth section transitions */
+  /* Section dimming transitions */
   section {
-    opacity: 0;
-    transform: translateY(30px);
-    will-change: opacity, transform;
+    opacity: 0.4;
+    transition: opacity 0.6s ease-out;
+  }
+  
+  section.section-active {
+    opacity: 1;
   }
   :root {
     /* Header height used for anchor offsetting to account for fixed header */
@@ -189,17 +192,13 @@
     }
   }
 
-  /* Smooth reveal animation for sections when scrolled into view.
-     The SectionObserver toggles the `in-view` class on sections. */
+  /* Section dimming - active section is bright, others are dimmed */
   section {
-    transition: transform 620ms cubic-bezier(.22,.9,.35,1), opacity 620ms ease;
-    transform: translateY(24px);
-    opacity: 0;
-    will-change: transform, opacity;
+    opacity: 0.4;
+    transition: opacity 0.6s ease-out;
   }
 
-  section.in-view {
-    transform: translateY(0);
+  section.section-active {
     opacity: 1;
   }
 

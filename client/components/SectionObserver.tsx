@@ -3,17 +3,25 @@ import { useEffect, useRef } from "react";
 export default function SectionObserver() {
   const currentColorRef = useRef<string>("#000000");
   const animationFrameRef = useRef<number>();
+  const activeSectionRef = useRef<string | null>(null);
 
   useEffect(() => {
     const sections = Array.from(document.querySelectorAll("section")) as HTMLElement[];
     if (!sections.length) return;
 
+    // Set hero as active initially
+    const heroSection = document.getElementById("hero");
+    if (heroSection) {
+      heroSection.classList.add("section-active");
+      activeSectionRef.current = "hero";
+    }
+
     // Define subtle, muted section colors
     const sectionColors: { [key: string]: string } = {
       hero: "#000000",
-      services: "#0f1419", // Very dark blue-gray, much more subtle
+      services: "#0f1419",
       about: "#000000",
-      brands: "#0f1419", // Subtle color for brands
+      brands: "#0f1419",
       showcase: "#000000",
       team: "#000000",
       contact: "#000000",
@@ -119,19 +127,35 @@ export default function SectionObserver() {
         // Apply smooth, subtle transition to the blended color
         updateBackgroundColor(blendedColor);
 
+        // Find the section with the highest intersection ratio
+        let maxRatio = 0;
+        let mostVisibleSection: HTMLElement | null = null;
+
+        entries.forEach((entry) => {
+          if (entry.intersectionRatio > maxRatio) {
+            maxRatio = entry.intersectionRatio;
+            mostVisibleSection = entry.target as HTMLElement;
+          }
+        });
+
+        // If we found a most visible section and it's significantly visible
+        if (mostVisibleSection && maxRatio > 0.3) {
+          const newActiveId = mostVisibleSection.id;
+          
+          // Only update if the active section changed
+          if (newActiveId !== activeSectionRef.current) {
+            // Remove active class from all sections
+            sections.forEach((s) => s.classList.remove("section-active"));
+            
+            // Add active class to the most visible section
+            mostVisibleSection.classList.add("section-active");
+            activeSectionRef.current = newActiveId;
+          }
+        }
+
         entries.forEach((entry) => {
           const el = entry.target as HTMLElement;
           const ratio = entry.intersectionRatio;
-
-          // Smooth section transitions based on intersection ratio
-          if (ratio > 0) {
-            // Calculate opacity and transform based on intersection ratio
-            const opacity = Math.min(1, ratio * 1.3); // Boost visibility
-            const translateY = (1 - ratio) * 20; // Subtle vertical movement
-
-            el.style.opacity = String(opacity);
-            el.style.transform = `translateY(${translateY}px)`;
-          }
 
           // Keep the in-view class for any other reveal logic (optional)
           if (ratio > 0.1) el.classList.add("in-view");
@@ -140,11 +164,13 @@ export default function SectionObserver() {
       },
       {
         threshold: thresholds,
-        rootMargin: "-15% 0px -15% 0px", // Start transitions earlier for smoother effect
+        rootMargin: "0px 0px 0px 0px",
       }
     );
 
-    sections.forEach((s) => observer.observe(s));
+    sections.forEach((s) => {
+      observer.observe(s);
+    });
 
     // Set initial background color
     document.body.style.backgroundColor = sectionColors.hero;

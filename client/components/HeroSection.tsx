@@ -1,7 +1,11 @@
+import { useState } from "react";
 import TextReveal from "@/components/TextReveal";
 import { Button } from "./ui/button";
+import ContactFormDialog from "@/components/ContactFormDialog";
 
 export default function HeroSection() {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
   return (
     <section
       id="hero"
@@ -33,10 +37,11 @@ export default function HeroSection() {
 
         {/* Subtitle */}
         <p className="text-base md:text-xl text-gray-300 max-w-md mx-auto mb-8 px-4">
-          And make them generate $100k in 4 months.
+          And make them 7 Figure Brands
         </p>        {/* CTA Button */}
         <Button
           size="lg"
+          onClick={() => setIsDialogOpen(true)}
           className="text-white font-bold text-lg py-3 px-8 rounded-full hover:scale-105 transition-transform duration-300"
           style={{
             background:
@@ -46,6 +51,11 @@ export default function HeroSection() {
           Let's Build Your Brand
         </Button>
       </div>
+
+      <ContactFormDialog 
+        open={isDialogOpen} 
+        onOpenChange={setIsDialogOpen} 
+      />
     </section>
   );
 }

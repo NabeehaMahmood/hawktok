@@ -17,7 +17,7 @@ export default function ContactSection() {
               <h2 
                 className="text-3xl sm:text-4xl md:text-3xl lg:text-5xl xl:text-6xl font-bold font-heading font-signord leading-tight"
                 style={{
-                  background: 'linear-gradient(135deg, #FF0050 0%, #FF1A66 15%, #EE2A7B 30%, #69C9D0 50%, #00F2EA 65%, #00D4FF 80%, #0099FF 100%)',
+                  background: 'linear-gradient(to right, #FF0050 0%, #FF1A66 14%, #EE2A7B 28%, #69C9D0 42%, #00F2EA 57%, #00D4FF 71%, #0099FF 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',

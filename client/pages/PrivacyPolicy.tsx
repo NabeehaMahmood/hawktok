@@ -65,7 +65,6 @@ export default function PrivacyPolicy() {
           <ul className="list-disc pl-6 space-y-2 text-gray-300">
             <li><strong>Personal Data:</strong> Name, email address, business name, niche/category, billing details, and project-related information you provide when contacting or onboarding with us.</li>
             <li><strong>Usage Data:</strong> IP address, device and browser type, operating system, referral source, pages visited, time spent, and engagement patterns.</li>
-            <li><strong>Marketing Data:</strong> Campaign analytics, preferences, and interactions with our ads or newsletters.</li>
           </ul>
         </div>
 
@@ -76,7 +75,7 @@ export default function PrivacyPolicy() {
             <li>Provide, personalize, and improve our services.</li>
             <li>Process payments and manage accounts.</li>
             <li>Respond to inquiries and deliver client support.</li>
-            <li>Perform analytics and improve site performance.</li>
+            <li>Improve site performance and user experience.</li>
             <li>Send strategic updates, offers, or insights relevant to your business (only with consent).</li>
             <li>Comply with legal obligations and enforce our Terms of Service.</li>
           </ul>
@@ -96,20 +95,6 @@ export default function PrivacyPolicy() {
         </div>
 
         <div className="mb-8">
-          <h2 className="text-2xl font-semibold mb-3">Cookies & Tracking</h2>
-          <p className="text-gray-300 leading-relaxed">
-            HawkTok uses cookies and tracking tools (such as Google Analytics, Meta Pixel, and TikTok Pixel) to understand behavior, measure campaign success, and enhance user experience. You can disable cookies through browser settings, though some functions may not work as intended.
-          </p>
-        </div>
-
-        <div className="mb-8">
-          <h2 className="text-2xl font-semibold mb-3">Analytics & Tools</h2>
-          <p className="text-gray-300 leading-relaxed">
-            We utilize analytics platforms to understand website performance and improve user flow. These tools collect pseudonymous data such as session time, scroll depth, and conversions—none of which personally identify you without your consent.
-          </p>
-        </div>
-
-        <div className="mb-8">
           <h2 className="text-2xl font-semibold mb-3">Payments</h2>
           <p className="text-gray-300 leading-relaxed">
             If you purchase services, payments are securely processed by verified third-party providers. HawkTok does not store full credit card details. Payment data is handled according to each provider's compliance standards (e.g., PCI DSS).
@@ -122,7 +107,7 @@ export default function PrivacyPolicy() {
             We do not sell or rent your personal data. We may share limited information with:
           </p>
           <ul className="list-disc pl-6 space-y-2 text-gray-300">
-            <li>Trusted service providers for hosting, analytics, support, or payments.</li>
+            <li>Trusted service providers for hosting, support, or payments.</li>
             <li>Professional advisors (legal, accounting) as necessary.</li>
             <li>Authorities when legally required or to protect our rights.</li>
           </ul>
@@ -154,7 +139,7 @@ export default function PrivacyPolicy() {
             <li>Request data portability.</li>
           </ul>
           <p className="text-gray-300 leading-relaxed mt-3">
-            To exercise your rights, contact us at <a href="mailto:privacy@hawktok.com" className="text-blue-400 hover:text-blue-300 underline">privacy@hawktok.com</a>.
+            To exercise your rights, contact us at <a href="mailto:info@hawktok.com" className="text-blue-400 hover:text-blue-300 underline">info@hawktok.com</a>.
           </p>
         </div>
 
@@ -197,7 +182,7 @@ export default function PrivacyPolicy() {
           <h2 className="text-2xl font-semibold mb-3">Contact Us</h2>
           <p className="text-gray-300 leading-relaxed">
             <strong>HawkTok</strong><br />
-            Email: <a href="mailto:info@hawktok.com" className="text-blue-400 hover:text-blue-300 underline">privacy@hawktok.com</a><br />
+            Email: <a href="mailto:info@hawktok.com" className="text-blue-400 hover:text-blue-300 underline">info@hawktok.com</a><br />
             Website: <a href="https://www.hawktok.com" className="text-blue-400 hover:text-blue-300 underline">www.hawktok.com</a>
           </p>
         </div>

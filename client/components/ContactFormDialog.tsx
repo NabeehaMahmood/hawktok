@@ -164,10 +164,10 @@ export default function ContactFormDialog({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[600px] bg-black border-2 border-gray-800 text-white">
-        <DialogHeader>
+      <DialogContent className="w-[95vw] max-w-[600px] max-h-[85vh] bg-black border-2 border-gray-800 text-white overflow-hidden flex flex-col p-4 sm:p-6">
+        <DialogHeader className="flex-shrink-0">
           <DialogTitle
-            className="text-3xl font-bold mb-2"
+            className="text-2xl sm:text-3xl font-bold mb-2"
             style={{
               fontFamily: "Signord, sans-serif",
               background:
@@ -180,22 +180,23 @@ export default function ContactFormDialog({
           >
             Let's Talk
           </DialogTitle>
-          <DialogDescription className="text-gray-400">
+          <DialogDescription className="text-gray-400 text-sm sm:text-base">
             Fill out the form below and we'll get back to you within 24 hours.
           </DialogDescription>
         </DialogHeader>
 
-        <form onSubmit={handleSubmit} className="space-y-6 mt-4">
+        <div className="overflow-y-auto flex-1 pr-2 -mr-2">
+          <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6 mt-4">
           {/* You Are Field */}
           <div className="space-y-2">
-            <Label className="text-gray-300">You are *</Label>
-            <div className="flex gap-3">
+            <Label className="text-gray-300 text-sm sm:text-base">You are *</Label>
+            <div className="flex gap-2 sm:gap-3">
               <button
                 type="button"
                 onClick={() =>
                   setFormData((prev) => ({ ...prev, userType: "individual" }))
                 }
-                className={`flex-1 px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+                className={`flex-1 px-3 sm:px-6 py-2 sm:py-3 rounded-lg font-medium transition-all duration-300 text-xs sm:text-base ${
                   formData.userType === "individual"
                     ? "text-white font-bold"
                     : "bg-gray-900 border border-gray-700 text-gray-400 hover:text-white hover:border-gray-600"
@@ -216,7 +217,7 @@ export default function ContactFormDialog({
                 onClick={() =>
                   setFormData((prev) => ({ ...prev, userType: "creator" }))
                 }
-                className={`flex-1 px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+                className={`flex-1 px-3 sm:px-6 py-2 sm:py-3 rounded-lg font-medium transition-all duration-300 text-xs sm:text-base ${
                   formData.userType === "creator"
                     ? "text-white font-bold"
                     : "bg-gray-900 border border-gray-700 text-gray-400 hover:text-white hover:border-gray-600"
@@ -237,7 +238,7 @@ export default function ContactFormDialog({
                 onClick={() =>
                   setFormData((prev) => ({ ...prev, userType: "brand" }))
                 }
-                className={`flex-1 px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+                className={`flex-1 px-3 sm:px-6 py-2 sm:py-3 rounded-lg font-medium transition-all duration-300 text-xs sm:text-base ${
                   formData.userType === "brand"
                     ? "text-white font-bold"
                     : "bg-gray-900 border border-gray-700 text-gray-400 hover:text-white hover:border-gray-600"
@@ -258,7 +259,7 @@ export default function ContactFormDialog({
 
           {/* Name Field */}
           <div className="space-y-2">
-            <Label htmlFor="name" className="text-gray-300">
+            <Label htmlFor="name" className="text-gray-300 text-sm sm:text-base">
               Name *
             </Label>
             <Input
@@ -274,7 +275,7 @@ export default function ContactFormDialog({
 
           {/* Email Field */}
           <div className="space-y-2">
-            <Label htmlFor="email" className="text-gray-300">
+            <Label htmlFor="email" className="text-gray-300 text-sm sm:text-base">
               Email *
             </Label>
             <Input
@@ -291,7 +292,7 @@ export default function ContactFormDialog({
 
           {/* Phone Field */}
           <div className="space-y-2">
-            <Label htmlFor="phone" className="text-gray-300">
+            <Label htmlFor="phone" className="text-gray-300 text-sm sm:text-base">
               Phone (International Format)
             </Label>
             <div className="relative">
@@ -320,7 +321,7 @@ export default function ContactFormDialog({
             <>
               {/* TikTok URL Field */}
               <div className="space-y-2">
-                <Label htmlFor="tiktokUrl" className="text-gray-300">
+                <Label htmlFor="tiktokUrl" className="text-gray-300 text-sm sm:text-base">
                   TikTok URL *
                 </Label>
                 <Input
@@ -338,7 +339,7 @@ export default function ContactFormDialog({
           ) : formData.userType === "brand" ? (
             /* TikTok Shop Link - Only for Brand */
             <div className="space-y-2">
-              <Label htmlFor="tiktokShopLink" className="text-gray-300">
+              <Label htmlFor="tiktokShopLink" className="text-gray-300 text-sm sm:text-base">
                 TikTok Shop Link *
               </Label>
               <Input
@@ -355,7 +356,7 @@ export default function ContactFormDialog({
           ) : (
             /* Company Field - Only for Individual */
             <div className="space-y-2">
-              <Label htmlFor="company" className="text-gray-300">
+              <Label htmlFor="company" className="text-gray-300 text-sm sm:text-base">
                 Company *
               </Label>
               <Input
@@ -372,7 +373,7 @@ export default function ContactFormDialog({
 
           {/* Message Field */}
           <div className="space-y-2">
-            <Label htmlFor="message" className="text-gray-300">
+            <Label htmlFor="message" className="text-gray-300 text-sm sm:text-base">
               Message *
             </Label>
             <Textarea
@@ -381,26 +382,26 @@ export default function ContactFormDialog({
               value={formData.message}
               onChange={handleChange}
               required
-              rows={4}
+              rows={3}
               className="bg-gray-900 border-gray-700 text-white focus:border-[#00F2EA] focus:ring-[#00F2EA] transition-colors resize-none"
               placeholder="Tell us about your project..."
             />
           </div>
 
           {/* Submit Button */}
-          <div className="flex gap-3 pt-4">
+          <div className="flex gap-3 pt-4 pb-2">
             <Button
               type="button"
               variant="outline"
               onClick={() => onOpenChange(false)}
-              className="flex-1 bg-transparent border-gray-700 text-white hover:bg-gray-900 hover:text-white transition-colors"
+              className="flex-1 bg-transparent border-gray-700 text-white hover:bg-gray-900 hover:text-white transition-colors text-sm sm:text-base"
             >
               Cancel
             </Button>
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="flex-1 text-white font-bold transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex-1 text-white font-bold transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
               style={{
                 background:
                   "linear-gradient(to right, #FF0050 0%, #FF1A66 14%, #EE2A7B 28%, #69C9D0 42%, #00F2EA 57%, #00D4FF 71%, #0099FF 100%)",
@@ -410,6 +411,7 @@ export default function ContactFormDialog({
             </Button>
           </div>
         </form>
+        </div>
       </DialogContent>
     </Dialog>
   );
